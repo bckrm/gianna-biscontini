@@ -14,7 +14,7 @@ export default function InternalLink({ content }) {
 
     return (
         <Link
-            className="internal-link relative text-[28px] tracking-[.195rem]"
+            className="link relative text-[28px] tracking-[.195rem]"
             style={{ lineHeight: '90%' }}
             to={`/${link}`}
         >

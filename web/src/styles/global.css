@@ -9,7 +9,7 @@
     --brand-4: #f2bc32;
 }
 
-.internal-link:before {
+.link:before {
     background: var(--brand-4);
     bottom: 0;
     content: '';
