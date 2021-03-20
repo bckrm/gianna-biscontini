@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "gianna-biscontini-studio",
+  "version": "0.1.0",
+  "main": "package.json",
+  "author": "asasmith <smith.asa.la@gmail.com>",
+  "scripts": {
+    "start": "npx @sanity/cli start",
+    "build": "npx @sanity/cli build",
+    "deploy": "npx @sanity/cli deploy",
+    "graphql-deploy": "npx @sanity/cli graphql deploy --playground",
+    "test": "npx @sanity/cli check"
+  },
+  "dependencies": {
+    "@sanity/base": "^2.6.0",
+    "@sanity/cli": "^2.6.0",
+    "@sanity/components": "^2.2.6",
+    "@sanity/core": "^2.6.1",
+    "@sanity/dashboard": "^2.2.6",
+    "@sanity/default-layout": "^2.6.0",
+    "@sanity/default-login": "^2.2.6",
+    "@sanity/desk-tool": "^2.6.1",
+    "@sanity/studio-hints": "^2.4.3",
+    "@sanity/vision": "^2.2.6",
+    "date-fns": "^2.19.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
+    "sanity-plugin-dashboard-widget-document-list": "^0.0.13",
+    "sanity-plugin-dashboard-widget-netlify": "^1.0.1"
+  }
+}
