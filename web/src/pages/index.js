@@ -69,9 +69,22 @@ export const query = graphql`
             }
             featuredMediaItem {
                 description
+                id
                 mediaType
                 link
                 title
+            }
+        }
+
+        mediaItems: allSanityMediaItem(limit: 6) {
+            edges {
+                node {
+                    description
+                    id
+                    link
+                    mediaType
+                    title
+                }
             }
         }
 
@@ -102,6 +115,7 @@ export default function IndexPage({ data }) {
         hero,
         intro,
         media,
+        mediaItems: { edges: mediaItems },
         testimonial,
     } = data;
 
@@ -110,7 +124,7 @@ export default function IndexPage({ data }) {
             <Hero content={hero} />
             <Intro content={intro} image={crimsonBgImage} />
             <Testimonial data={testimonial} />
-            <Media data={media} image={greenBgImage} />
+            <Media data={media} mediaItems={mediaItems} image={greenBgImage} />
         </Layout>
     );
 }
@@ -122,6 +136,7 @@ IndexPage.propTypes = {
         hero: PropTypes.object.isRequired,
         intro: PropTypes.object.isRequired,
         media: PropTypes.object.isRequired,
+        mediaItems: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
     }).isRequired,
 };
