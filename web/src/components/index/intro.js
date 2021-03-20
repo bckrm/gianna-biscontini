@@ -8,7 +8,7 @@ import Img from 'gatsby-image';
 import InternalLink from '../internalLink';
 
 const Section = styled.section`
-    ${tw`mb-40`}
+    ${tw`mb-80`}
 `;
 
 const StyledBgImage = styled(BackgroundImage)`
