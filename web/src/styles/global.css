@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --brand-1: #701531;
+    --brand-2: #183324;
+    --brand-3: #f2c44b;
+    --brand-4: #f2bc32;
+}
+
+.internal-link:before {
+    background: var(--brand-4);
+    bottom: 0;
+    content: '';
+    height: 55%;
+    left: -2%;
+    position: absolute;
+    width: 104%;
+    z-index: -1;
+}
