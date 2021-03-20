@@ -17,7 +17,13 @@ module.exports = {
             center: true,
             padding: theme('spacing.5'),
         }),
-        extend: {},
+        extend: {
+            colors: {
+                'brand-1': '#701531',
+                'brand-2': '#183324',
+                'brand-3': '#F2C44B',
+            },
+        },
     },
     variants: {
         extend: {},
