@@ -10,15 +10,24 @@ export default () => {
         .title('Content')
         .items([
             S.listItem()
-                .title('Index Page')
+                .title('Index')
                 .icon(VscFile)
                 .child(
                     S.document()
                         .schemaType('indexPage')
                         .documentId('indexPage'),
                 ),
+            S.listItem()
+                .title('Coaching')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('coachingPage')
+                        .documentId('coachingPage'),
+                ),
             ...S.documentTypeListItems().filter(
-                (listItem) => !['indexPage'].includes(listItem.getId()),
+                (listItem) =>
+                    !['indexPage', 'coachingPage'].includes(listItem.getId()),
             ),
         ]);
 };
