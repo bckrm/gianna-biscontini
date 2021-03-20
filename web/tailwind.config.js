@@ -2,6 +2,14 @@ module.exports = {
     purge: ['./src/**/*.js', './src/**/*.jsx'],
     darkMode: false, // or 'media' or 'class'
     theme: {
+        container: (theme) => ({
+            center: true,
+            padding: theme('spacing.5'),
+        }),
+        fontFamily: {
+            display: ['Abril Fatface'],
+            body: ['Montserrat'],
+        },
         fontSize: {
             h1: '5.61rem',
             h2: '4.209rem',
@@ -14,10 +22,7 @@ module.exports = {
             caption: '.75rem',
             attribution: '.563rem',
         },
-        container: (theme) => ({
-            center: true,
-            padding: theme('spacing.5'),
-        }),
+
         extend: {
             colors: {
                 'brand-1': '#701531',
