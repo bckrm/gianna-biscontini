@@ -9,6 +9,7 @@ module.exports = {
             h4: '2.369rem',
             h5: '1.777rem',
             h6: '1.333rem',
+            xl: '1.25rem',
             body: '1rem',
             caption: '.75rem',
             attribution: '.563rem',
