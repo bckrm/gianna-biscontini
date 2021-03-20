@@ -38,7 +38,7 @@ export default {
         {
             name: 'introLink',
             title: 'Intro Link (emily, will these be internal or external)',
-            type: 'string',
+            type: 'internalLink',
         },
         {
             name: 'introImage',
