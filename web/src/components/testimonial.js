@@ -15,7 +15,7 @@ export default function Testimonial({ data }) {
     } = testimonial[0];
 
     return (
-        <section className="container grid grid-cols-12 gap-x-16">
+        <section className="container grid grid-cols-12 gap-x-16 mb-32">
             <Img
                 className="col-start-1 col-end-4 relative rounded-full transform translate-y-[-40%]"
                 fluid={imageData}
