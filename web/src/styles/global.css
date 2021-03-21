@@ -9,6 +9,30 @@
     --brand-4: #f2bc32;
 }
 
+.block-content p {
+    margin-bottom: 1rem;
+}
+
+.block-content li {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding-left: 0.75rem;
+    position: relative;
+}
+
+.block-content li:before {
+    background: #000000;
+    border-radius: 100%;
+    content: '';
+    height: 0.25rem;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    width: 0.25rem;
+}
+
 .link:before {
     background: var(--brand-4);
     bottom: 0;

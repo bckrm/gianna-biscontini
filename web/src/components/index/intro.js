@@ -65,7 +65,7 @@ export default function Intro({ content, image }) {
                 <Body>{introBody}</Body>
                 <StyledImg fluid={imageData} />
                 <LinkContainer>
-                    <InternalLink content={introLink} />
+                    <InternalLink data={introLink} />
                 </LinkContainer>
             </Grid>
         </Section>

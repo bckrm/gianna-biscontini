@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 // import tw from 'twin.macro';
 import { Link } from 'gatsby';
 
-export default function InternalLink({ content }) {
+export default function InternalLink({ data }) {
     const {
         link: { pageTitle },
         linkText,
-    } = content;
+    } = data;
 
+    console.log(data);
     const link = pageTitle.toLowerCase();
 
     return (
@@ -24,5 +25,5 @@ export default function InternalLink({ content }) {
 }
 
 InternalLink.propTypes = {
-    content: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
 };
