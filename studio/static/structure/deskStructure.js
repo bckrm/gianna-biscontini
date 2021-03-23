@@ -25,9 +25,19 @@ export default () => {
                         .schemaType('coachingPage')
                         .documentId('coachingPage'),
                 ),
+            S.listItem()
+                .title('Speaking')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('speakingPage')
+                        .documentId('speakingPage'),
+                ),
             ...S.documentTypeListItems().filter(
                 (listItem) =>
-                    !['indexPage', 'coachingPage'].includes(listItem.getId()),
+                    !['indexPage', 'coachingPage', 'speakingPage'].includes(
+                        listItem.getId(),
+                    ),
             ),
         ]);
 };

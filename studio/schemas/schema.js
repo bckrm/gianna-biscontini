@@ -6,11 +6,17 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Document schemas
+import coachingCategory from './documents/coachingCategory';
 import coachingPage from './documents/coachingPage';
+import event from './documents/events';
 import indexPage from './documents/indexPage';
 import internalLink from './documents/internalLink';
 import mediaItem from './documents/mediaItem';
+import speakingPage from './documents/speakingPage';
 import testimonial from './documents/testimonial';
+
+// Object schemas
+import cta from './objects/cta';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,10 +26,16 @@ export default createSchema({
     // to the ones provided by any plugins that are installed
     types: schemaTypes.concat([
         // documents
+        coachingCategory,
         coachingPage,
+        event,
         indexPage,
         internalLink,
         mediaItem,
+        speakingPage,
         testimonial,
+
+        // objects
+        cta,
     ]),
 });

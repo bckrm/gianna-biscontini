@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'pubDate',
+            title: 'Publish Date',
+            type: 'date',
+        },
+        {
             name: 'mediaType',
             title: 'Media Type',
             type: 'string',

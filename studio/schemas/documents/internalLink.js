@@ -12,7 +12,11 @@ export default {
             name: 'link',
             title: 'Link',
             type: 'reference',
-            to: [{ type: 'indexPage' }, { type: 'coachingPage' }],
+            to: [
+                { type: 'indexPage' },
+                { type: 'coachingPage' },
+                { type: 'speakingPage' },
+            ],
         },
     ],
 };

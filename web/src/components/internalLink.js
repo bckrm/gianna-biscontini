@@ -10,12 +10,11 @@ export default function InternalLink({ data }) {
         linkText,
     } = data;
 
-    console.log(data);
     const link = pageTitle.toLowerCase();
 
     return (
         <Link
-            className="link relative text-[28px] tracking-[.195rem]"
+            className="link relative text-[28px] tracking-[.195rem] uppercase"
             style={{ lineHeight: '90%' }}
             to={`/${link}`}
         >
