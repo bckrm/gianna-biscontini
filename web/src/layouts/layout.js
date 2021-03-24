@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 
+import Header from '../components/header';
+
 import 'fontsource-abril-fatface';
 import 'fontsource-montserrat';
 
@@ -24,6 +26,7 @@ export default function Layout({ children }) {
     return (
         <>
             <GlobalStyles />
+            <Header />
             <main>{children}</main>
         </>
     );

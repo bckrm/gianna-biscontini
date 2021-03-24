@@ -14,8 +14,13 @@ export default function Credentials({ data }) {
     } = data;
     return (
         <section className="container mt-40 mb-80">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <Img className="max-w-[600px]" fluid={imageData} />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-12">
+                <div className="max-w-full">
+                    <Img
+                        className="max-w-full lg:max-w-[600px]"
+                        fluid={imageData}
+                    />
+                </div>
                 <div className="pt-12">
                     <h2 className="font-body font-semibold mb-8 text-brand-1 text-h4 tracking-[.115rem] uppercase">
                         {introHeading}

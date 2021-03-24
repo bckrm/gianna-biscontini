@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-// import tw from 'twin.macro';
 import Img from 'gatsby-image';
 
 export default function Testimonial({ data }) {
@@ -15,13 +13,12 @@ export default function Testimonial({ data }) {
     } = testimonial[0];
 
     return (
-        <section className="container grid grid-cols-12 gap-x-16 mb-32">
-            <Img
-                className="col-start-1 col-end-4 relative rounded-full transform translate-y-[-40%]"
-                fluid={imageData}
-            />
+        <section className="container grid grid-cols-1 lg:grid-cols-12 lg:gap-x-16 mb-32">
+            <div className="max-w-[90%] lg:max-w-full lg:col-start-1 lg:col-end-4 overflow-hidden relative rounded-full transform translate-y-[-40%]">
+                <Img className="max-w-full" fluid={imageData} />
+            </div>
             <h2
-                className="col-start-4 col-end-13 inline relative text-[50px] text-brand-1 quote"
+                className="lg:col-start-4 lg:col-end-13 inline relative text-[50px] text-brand-1 quote"
                 style={{ lineHeight: '50px' }}
             >
                 {quote}
