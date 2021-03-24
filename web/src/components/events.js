@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import formatDate from '../helpers/dateFormatter';
 
 export default function Events({ data }) {
     const {
@@ -22,15 +23,6 @@ export default function Events({ data }) {
     const displayedEvents = [...rawFeaturedEvents, ...filteredArray].sort(
         (a, b) => Date.parse(b.date) - Date.parse(a.date),
     );
-
-    const formatDate = (datestring) => {
-        const options = {
-            year: 'numeric',
-            month: 'numeric',
-            day: 'numeric',
-        };
-        return new Date(datestring).toLocaleDateString(undefined, options);
-    };
 
     return (
         <section className="container mb-60">

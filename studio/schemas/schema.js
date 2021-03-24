@@ -6,8 +6,10 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Document schemas
+import aboutPage from './documents/aboutPage';
 import coachingCategory from './documents/coachingCategory';
 import coachingPage from './documents/coachingPage';
+import credentials from './documents/credentials';
 import event from './documents/events';
 import indexPage from './documents/indexPage';
 import internalLink from './documents/internalLink';
@@ -26,8 +28,10 @@ export default createSchema({
     // to the ones provided by any plugins that are installed
     types: schemaTypes.concat([
         // documents
+        aboutPage,
         coachingCategory,
         coachingPage,
+        credentials,
         event,
         indexPage,
         internalLink,

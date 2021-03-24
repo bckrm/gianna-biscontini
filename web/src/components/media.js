@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import formatDate from '../helpers/dateFormatter';
 
 export default function Media({ data }) {
     const {
@@ -22,15 +23,6 @@ export default function Media({ data }) {
 
         return text;
     }
-
-    const formatDate = (datestring) => {
-        const options = {
-            year: 'numeric',
-            month: 'numeric',
-            day: 'numeric',
-        };
-        return new Date(datestring).toLocaleDateString(undefined, options);
-    };
 
     return (
         <section className="container mb-80">

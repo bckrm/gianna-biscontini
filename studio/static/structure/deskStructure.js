@@ -33,11 +33,22 @@ export default () => {
                         .schemaType('speakingPage')
                         .documentId('speakingPage'),
                 ),
+            S.listItem()
+                .title('About')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('aboutPage')
+                        .documentId('aboutPage'),
+                ),
             ...S.documentTypeListItems().filter(
                 (listItem) =>
-                    !['indexPage', 'coachingPage', 'speakingPage'].includes(
-                        listItem.getId(),
-                    ),
+                    ![
+                        'aboutPage',
+                        'indexPage',
+                        'coachingPage',
+                        'speakingPage',
+                    ].includes(listItem.getId()),
             ),
         ]);
 };
