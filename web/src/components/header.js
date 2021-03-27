@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import Mark from './logos/mark';
@@ -28,7 +29,7 @@ const nav = [
     },
 ];
 
-export default function Header() {
+export default function Header({ logoColor }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
@@ -56,7 +57,7 @@ export default function Header() {
         <nav className="fixed py-8 w-full z-10" isScrolled={isScrolled}>
             <div className="container flex justify-between mx-auto text-black">
                 <Link href="/">
-                    <Mark />
+                    <Mark logoColor={logoColor} />
                 </Link>
                 <MobilNav
                     handleNavToggle={handleNavToggle}
@@ -69,3 +70,11 @@ export default function Header() {
         </nav>
     );
 }
+
+Header.defaultProps = {
+    logoColor: 'var(--white)',
+};
+
+Header.propTypes = {
+    logoColor: PropTypes.string,
+};
