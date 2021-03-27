@@ -17,6 +17,7 @@
   "license": "0BSD",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
+    "@tailwindcss/forms": "^0.3.2",
     "babel-plugin-styled-components": "^1.12.0",
     "dotenv": "^8.2.0",
     "fontsource-abril-fatface": "^4.0.0",

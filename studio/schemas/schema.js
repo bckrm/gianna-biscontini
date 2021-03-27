@@ -9,6 +9,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import aboutPage from './documents/aboutPage';
 import coachingCategory from './documents/coachingCategory';
 import coachingPage from './documents/coachingPage';
+import contactPage from './documents/contactPage';
 import credentials from './documents/credentials';
 import event from './documents/events';
 import indexPage from './documents/indexPage';
@@ -31,6 +32,7 @@ export default createSchema({
         aboutPage,
         coachingCategory,
         coachingPage,
+        contactPage,
         credentials,
         event,
         indexPage,
