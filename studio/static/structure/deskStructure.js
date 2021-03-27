@@ -41,12 +41,21 @@ export default () => {
                         .schemaType('aboutPage')
                         .documentId('aboutPage'),
                 ),
+            S.listItem()
+                .title('Contact')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('contactPage')
+                        .documentId('contactPage'),
+                ),
             ...S.documentTypeListItems().filter(
                 (listItem) =>
                     ![
                         'aboutPage',
-                        'indexPage',
                         'coachingPage',
+                        'contactPage',
+                        'indexPage',
                         'speakingPage',
                     ].includes(listItem.getId()),
             ),
