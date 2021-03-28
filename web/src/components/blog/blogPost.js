@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import Hero from './hero';
 import BlockText from '../block-content/blockText';
 
-export default function BlogPost({ mainImage, _rawBody, title }) {
+export default function BlogPost({ data }) {
+    const { mainImage, _rawBody, title } = data;
     const heroData = { mainImage, title };
     return (
         <>
@@ -17,7 +18,9 @@ export default function BlogPost({ mainImage, _rawBody, title }) {
 }
 
 BlogPost.propTypes = {
-    mainImage: PropTypes.object.isRequired,
-    _rawBody: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired,
+    data: PropTypes.shape({
+        mainImage: PropTypes.object.isRequired,
+        _rawBody: PropTypes.array.isRequired,
+        title: PropTypes.string.isRequired,
+    }).isRequired,
 };
