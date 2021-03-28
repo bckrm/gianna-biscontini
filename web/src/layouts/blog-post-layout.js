@@ -8,7 +8,7 @@ export const query = graphql`
     query BlogPostTemplateQuery($id: String!) {
         post: sanityPost(id: { eq: $id }) {
             id
-            publishedAt
+            publishDate
             mainImage {
                 asset {
                     fluid(maxWidth: 500) {
@@ -20,7 +20,7 @@ export const query = graphql`
             slug {
                 current
             }
-            _rawExcerpt(resolveReferences: { maxDepth: 5 })
+            excerpt
             _rawBody(resolveReferences: { maxDepth: 5 })
         }
     }
