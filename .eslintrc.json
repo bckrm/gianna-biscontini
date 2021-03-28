@@ -44,7 +44,8 @@
         "prettier/prettier": "warn",
         "space-before-function-paren": ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
         "no-use-before-define": ["error", { "functions": false, "classes": true }],
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "no-shadow": "off"
     },
     "root": true
 }
