@@ -22,16 +22,21 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
-export default function Layout({ children }) {
+export default function Layout({ children, logoColor }) {
     return (
         <>
             <GlobalStyles />
-            <Header />
+            <Header logoColor={logoColor} />
             <main>{children}</main>
         </>
     );
 }
 
+Layout.defaultProps = {
+    logoColor: 'var(--white)',
+};
+
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
+    logoColor: PropTypes.string,
 };

@@ -34,6 +34,14 @@ export default () => {
                         .documentId('speakingPage'),
                 ),
             S.listItem()
+                .title('Writing')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('writingPage')
+                        .documentId('writingPage'),
+                ),
+            S.listItem()
                 .title('About')
                 .icon(VscFile)
                 .child(
@@ -57,6 +65,7 @@ export default () => {
                         'contactPage',
                         'indexPage',
                         'speakingPage',
+                        'writingPage',
                     ].includes(listItem.getId()),
             ),
         ]);

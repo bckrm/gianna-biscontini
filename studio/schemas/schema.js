@@ -15,11 +15,16 @@ import event from './documents/events';
 import indexPage from './documents/indexPage';
 import internalLink from './documents/internalLink';
 import mediaItem from './documents/mediaItem';
+import post from './documents/post';
 import speakingPage from './documents/speakingPage';
 import testimonial from './documents/testimonial';
+import writingPage from './documents/writingPage';
 
 // Object schemas
+import bodyPortableText from './objects/bodyPortableText';
 import cta from './objects/cta';
+import excerptPortableText from './objects/excerptPortableText';
+import mainImage from './objects/mainImage';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -38,10 +43,15 @@ export default createSchema({
         indexPage,
         internalLink,
         mediaItem,
+        post,
         speakingPage,
         testimonial,
+        writingPage,
 
         // objects
+        bodyPortableText,
         cta,
+        excerptPortableText,
+        mainImage,
     ]),
 });
