@@ -11,16 +11,10 @@ async function createBlogPostPages(graphql, actions) {
     const { createPage } = actions;
     const result = await graphql(`
         {
-            allSanityPost(
-                filter: {
-                    slug: { current: { ne: null } }
-                    publishedAt: { ne: null }
-                }
-            ) {
+            allSanityPost(filter: { slug: { current: { ne: null } } }) {
                 edges {
                     node {
                         id
-                        publishedAt
                         slug {
                             current
                         }
@@ -38,12 +32,11 @@ async function createBlogPostPages(graphql, actions) {
         .filter((edge) => !isFuture(new Date(edge.node.publishedAt)))
         .forEach((edge) => {
             const { id, slug = {} } = edge.node;
-            // const dateSegment = format(new Date(publishedAt), 'yyyy/MM');
             const path = `/writing/${slug.current}/`;
 
             createPage({
                 path,
-                component: require.resolve('./src/layouts/blog-post.js'),
+                component: require.resolve('./src/layouts/blog-post-layout.js'),
                 context: { id },
             });
         });
