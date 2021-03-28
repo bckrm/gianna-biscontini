@@ -10,6 +10,19 @@
     --white: #ffffff;
 }
 
+@layer base {
+    body {
+        @apply text-base-sm;
+    }
+
+    /* applying font size for lg breakpoint */
+    @screen lg {
+        body {
+            @apply text-base;
+        }
+    }
+}
+
 .block-content p {
     margin-bottom: 1rem;
 }

@@ -12,6 +12,8 @@ module.exports = {
             body: ['Montserrat'],
         },
         fontSize: {
+            base: '16px',
+            'base-sm': '14px',
             h1: '5.61rem',
             h2: '4.209rem',
             h3: '3.157rem',
