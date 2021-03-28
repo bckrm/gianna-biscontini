@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 import 'fontsource-abril-fatface';
 import 'fontsource-montserrat';
@@ -28,6 +29,7 @@ export default function Layout({ children, logoColor }) {
             <GlobalStyles />
             <Header logoColor={logoColor} />
             <main>{children}</main>
+            <Footer />
         </>
     );
 }
