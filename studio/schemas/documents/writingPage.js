@@ -14,5 +14,16 @@ export default {
             title: 'Page Title',
             type: 'string',
         },
+        {
+            name: 'introBody',
+            title: 'Intro Body',
+            type: 'text',
+        },
+        {
+            name: 'featuredPost',
+            title: 'Featured Post',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'post' } }],
+        },
     ],
 };
