@@ -53,11 +53,16 @@ export default function Header({ logoColor }) {
         };
     });
 
+    const scrolledNavStyles = isScrolled ? 'bg-white' : 'bg-transparent';
+
     return (
-        <nav className="fixed py-8 w-full z-10" isScrolled={isScrolled}>
+        <nav
+            className={`fixed py-8 transition-colors w-full z-10 ${scrolledNavStyles}`}
+            isScrolled={isScrolled}
+        >
             <div className="container flex justify-between mx-auto text-black">
                 <Link href="/">
-                    <Mark logoColor={logoColor} />
+                    <Mark isScrolled={isScrolled} logoColor={logoColor} />
                 </Link>
                 <MobilNav
                     handleNavToggle={handleNavToggle}
