@@ -72,14 +72,25 @@
     content: '';
     left: 0;
     top: 0;
-    transform: translateY(-100%) translateX(-100%);
+    transform: translateY(-100%);
     z-index: -1;
 }
+
 .quote:after {
     background: url('../static/close-quotes.png') no-repeat center center;
     background-size: contain;
     bottom: 0;
     content: '';
     right: 0;
-    transform: translateY(50%) translateX(-50%);
+    transform: translateY(100%);
+}
+
+@media screen and (min-width: 1024px) {
+    .quote:before {
+        transform: translateY(-100%) translateX(-100%);
+    }
+
+    .quote:after {
+        transform: translateY(100%);
+    }
 }
