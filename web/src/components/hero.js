@@ -45,9 +45,11 @@ export default function Hero({ background, data, isContact }) {
                             <Img fluid={imageData} />
                         </div>
                     )}
-                    <p className="block text-xl w-1/2 ml-auto px-16">
-                        {heading}
-                    </p>
+                    {heading && (
+                        <p className="block text-xl w-1/2 ml-auto px-16">
+                            {heading}
+                        </p>
+                    )}
                 </div>
             )}
         </section>
