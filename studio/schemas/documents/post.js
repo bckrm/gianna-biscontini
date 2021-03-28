@@ -20,9 +20,9 @@ export default {
             },
         },
         {
-            name: 'publishedAt',
+            name: 'publishDate',
             type: 'date',
-            title: 'Published at',
+            title: 'Publish Date',
             description: 'This can be used to schedule post for publishing',
         },
         {
@@ -32,7 +32,7 @@ export default {
         },
         {
             name: 'excerpt',
-            type: 'excerptPortableText',
+            type: 'text',
             title: 'Excerpt',
             description:
                 'This ends up on summary pages, on Google, when people share your post in social media.',
@@ -49,7 +49,7 @@ export default {
             title: 'Publishing date new–>old',
             by: [
                 {
-                    field: 'publishedAt',
+                    field: 'publishDate',
                     direction: 'desc',
                 },
                 {
