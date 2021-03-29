@@ -98,7 +98,7 @@ export const query = graphql`
             }
         }
 
-        mediaItems: allSanityMediaItem(limit: 6) {
+        mediaItems: allSanityMediaItem {
             edges {
                 node {
                     description
