@@ -123,6 +123,19 @@ export default function ContactForm() {
                         </label>
                         <label
                             className={checkBoxLabelStyles}
+                            htmlFor="writing"
+                        >
+                            Writing Requests
+                            <input
+                                className={checkBoxInputStyles}
+                                id="writing"
+                                name="writing"
+                                onChange={handleChange}
+                                type="checkbox"
+                            />
+                        </label>
+                        <label
+                            className={checkBoxLabelStyles}
                             htmlFor="organizational"
                         >
                             Organizational Assessment + Advisory Project
@@ -143,19 +156,6 @@ export default function ContactForm() {
                                 className={checkBoxInputStyles}
                                 id="coaching"
                                 name="coaching"
-                                onChange={handleChange}
-                                type="checkbox"
-                            />
-                        </label>
-                        <label
-                            className={checkBoxLabelStyles}
-                            htmlFor="writing"
-                        >
-                            Executive Coaching + Wellbeing Sessions
-                            <input
-                                className={checkBoxInputStyles}
-                                id="writing"
-                                name="writing"
                                 onChange={handleChange}
                                 type="checkbox"
                             />
