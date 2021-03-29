@@ -13,7 +13,7 @@ export default function Categories({ data, options }) {
     const [activeTab, setActiveTab] = useState(categories[0].id);
 
     return (
-        <section className="container mb-80">
+        <section className="container mb-40 lg:mb-80">
             <ul className="grid grid-cols-3 mb-28">
                 {navItems.map((item) => {
                     return (
@@ -27,7 +27,7 @@ export default function Categories({ data, options }) {
                             {item.icon === 'life' && <LifeIcon />}
                             {item.icon === 'team' && <TeamIcon />}
                             <button
-                                className="font-semibold text-h4 leading-none max-w-[75%] mt-8 text-current"
+                                className="font-semibold text-body md:text-xl lg:text-h4 leading-none max-w-[75%] mt-8 text-current"
                                 type="button"
                                 onClick={() => setActiveTab(item.id)}
                             >

@@ -18,7 +18,7 @@ export default function Category({ data, isActive }) {
         <AnimatePresence>
             {isActive && (
                 <motion.div
-                    className="grid grid-cols-2 gap-10"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-10"
                     key={id}
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
@@ -29,7 +29,7 @@ export default function Category({ data, isActive }) {
                     }}
                 >
                     <div className="block-content text-xl">
-                        <h2 className="max-w-[75%] mb-8 text-h3 text-brand-1">
+                        <h2 className="w-full lg:max-w-[75%] mb-8 text-h3 text-brand-1">
                             {title}
                         </h2>
                         <BlockText
