@@ -4,7 +4,7 @@ export default function TeamIcon() {
     return (
         <svg
             className="transform translate-y-[-9%]"
-            width="192"
+            width="auto"
             height="137"
             viewBox="0 0 192 137"
             fill="none"
