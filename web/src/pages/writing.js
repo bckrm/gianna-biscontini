@@ -30,7 +30,7 @@ export const query = graphql`
         }
     }
     query WritingPage {
-        hero: sanitySpeakingPage {
+        hero: sanityWritingPage {
             pageTitle
         }
 
