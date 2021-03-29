@@ -7,8 +7,30 @@ import Hero from '../components/index/hero';
 import Intro from '../components/index/intro';
 import Testimonial from '../components/testimonial';
 import Media from '../components/index/media';
+import Blog from '../components/index/blog';
 
 export const query = graphql`
+    fragment SanityImage on SanityMainImage {
+        crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+        }
+        hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+        }
+        asset {
+            _id
+        }
+    }
     query IndexPage {
         hero: sanityIndexPage {
             heroHeading
@@ -88,6 +110,27 @@ export const query = graphql`
             }
         }
 
+        rawPosts: allSanityPost(
+            sort: { fields: publishDate, order: DESC }
+            limit: 7
+        ) {
+            edges {
+                node {
+                    excerpt
+                    id
+                    publishDate
+                    slug {
+                        current
+                    }
+                    title
+                    mainImage {
+                        ...SanityImage
+                        alt
+                    }
+                }
+            }
+        }
+
         crimsonBgImage: file(relativePath: { regex: "/crimsonBg/" }) {
             id
             childImageSharp {
@@ -116,6 +159,7 @@ export default function IndexPage({ data }) {
         intro,
         media,
         mediaItems: { edges: mediaItems },
+        rawPosts,
         testimonial,
     } = data;
 
@@ -125,6 +169,7 @@ export default function IndexPage({ data }) {
             <Intro content={intro} image={crimsonBgImage} />
             <Testimonial data={testimonial} />
             <Media data={media} mediaItems={mediaItems} image={greenBgImage} />
+            <Blog data={rawPosts} />
         </Layout>
     );
 }
@@ -137,6 +182,7 @@ IndexPage.propTypes = {
         intro: PropTypes.object.isRequired,
         media: PropTypes.object.isRequired,
         mediaItems: PropTypes.object.isRequired,
+        rawPosts: PropTypes.array.isRequired,
         testimonial: PropTypes.object.isRequired,
     }).isRequired,
 };

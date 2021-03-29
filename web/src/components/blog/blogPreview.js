@@ -24,23 +24,23 @@ function buildImageObj(source = { asset: {} }) {
     return imageObj;
 }
 
-export default function BlogPreview({ data }) {
+export default function BlogPreview({ data, imageAspectRatio }) {
     return (
         <figure key={data.id}>
             <img
                 className="mb-5"
                 src={imageUrlFor(buildImageObj(data.mainImage))
                     .width(500)
-                    .height(Math.floor(1.0675 * 500))
+                    .height(Math.floor(imageAspectRatio * 500))
                     .fit('crop')
                     .auto('format')
                     .url()}
                 alt={data.mainImage.alt}
             />
-            <h3 className="font-regular mb-4 text-[24px] text-brand-1 leading-none">
+            <h3 className="font-regular mb-2 text-[24px] text-brand-1 leading-none">
                 {data.title}
             </h3>
-            <p className="mb-4">{formatDate(data.publishDate)}</p>
+            <p className="mb-2 leading-none">{formatDate(data.publishDate)}</p>
 
             <Link
                 className="link relative tracking-[.195rem] uppercase"
@@ -52,6 +52,11 @@ export default function BlogPreview({ data }) {
     );
 }
 
+BlogPreview.defaultProps = {
+    imageAspectRatio: 1.0675,
+};
+
 BlogPreview.propTypes = {
     data: PropTypes.object.isRequired,
+    imageAspectRatio: PropTypes.number,
 };
