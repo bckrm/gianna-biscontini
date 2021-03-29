@@ -12,9 +12,9 @@ export default function Intro({ data }) {
         introHeading,
     } = data;
     return (
-        <section className="container grid grid-cols-2 gap-10 mb-44">
+        <section className="container grid grid-cols-1 md:grid-cols-2 gap-10 mb-44">
             <Img fluid={imageData} />
-            <div className="flex flex-col justify-end items-start -mb-16">
+            <div className="flex flex-col justify-end items-start md:-mb-16">
                 <h2 className="mb-2 text-h3 text-brand-1">{introHeading}</h2>
                 <p className="text-xl">{introBody}</p>
             </div>
