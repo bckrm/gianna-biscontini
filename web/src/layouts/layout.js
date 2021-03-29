@@ -5,8 +5,9 @@ import { createGlobalStyle } from 'styled-components';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-import 'fontsource-abril-fatface';
-import 'fontsource-montserrat';
+import '@fontsource/abril-fatface';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/600.css';
 
 const GlobalStyles = createGlobalStyle`
     :root {
