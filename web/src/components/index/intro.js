@@ -19,26 +19,20 @@ const HeadingContainer = styled.div`
     ${tw`container`}
 `;
 
-const Heading = styled.h2`
-    ${tw`text-h3 text-white leading-none`}
-
-    max-width: 50%;
-`;
-
 const Grid = styled.div`
-    ${tw`container grid grid-cols-12 gap-x-5`}
+    ${tw`container grid grid-cols-1 md:grid-cols-12 gap-x-5 gap-y-10`}
 `;
 
 const Body = styled.p`
-    ${tw`col-start-1 col-end-7 text-xl`}
+    ${tw`md:col-start-1 md:col-end-7 text-xl`}
 `;
 
 const StyledImg = styled(Img)`
-    ${tw`col-start-8 col-end-13 -mt-40`}
+    ${tw`row-start-1 md:col-start-8 md:col-end-13 -mt-16 md:-mt-40`}
 `;
 
 const LinkContainer = styled.div`
-    ${tw`col-start-1 col-end-3 row-start-2`}
+    ${tw`md:col-start-1 md:col-end-6 md:row-start-2`}
 `;
 
 export default function Intro({ content, image }) {
@@ -58,7 +52,9 @@ export default function Intro({ content, image }) {
         <Section>
             <StyledBgImage fluid={bgImageData}>
                 <HeadingContainer>
-                    <Heading>{introHeading}</Heading>
+                    <h2 className="max-w-full md:max-w-[50%] text-h3 text-white leading-none">
+                        {introHeading}
+                    </h2>
                 </HeadingContainer>
             </StyledBgImage>
             <Grid>
