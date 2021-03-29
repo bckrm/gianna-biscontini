@@ -43,7 +43,7 @@ export const query = graphql`
                 _rawDescription
                 image {
                     asset {
-                        fluid(maxWidth: 400) {
+                        fluid(maxWidth: 1200) {
                             ...GatsbySanityImageFluid
                         }
                     }
