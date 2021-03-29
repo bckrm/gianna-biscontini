@@ -48,15 +48,10 @@ export default function Media({ data, image, mediaItems }) {
             </h2>
             <div className="mb-40 relative">
                 <BackgroundImage
-                    style={{
-                        width: '80%',
-                        paddingBottom: '6rem',
-                        paddingTop: '2rem',
-                        paddingLeft: '2rem',
-                    }}
+                    className="pb-20 pt-8 px-8 w-full md:w-4/5"
                     fluid={bgImageData}
                 >
-                    <h3 className="mb-10 text-white text-[50px] leading-none w-3/4">
+                    <h3 className="mb-10 text-white text-[50px] leading-none w-full lg:w-3/4">
                         {description}
                     </h3>
                     <a
@@ -68,14 +63,14 @@ export default function Media({ data, image, mediaItems }) {
                         {linkText(mediaType)}
                     </a>
                 </BackgroundImage>
-                <div className="absolute w-1/3 bottom-[-2rem] right-[0]">
+                <div className="relative lg:absolute ml-auto mr-0 w-4/5 lg:w-1/3 bottom-[4rem] lg:bottom-[-2rem] -right-8 lg:right-[0]">
                     <Img fluid={imageData} />
                 </div>
             </div>
             <h3 className="font-body mb-10 uppercase text-xl tracking-[.08rem]">
                 {mediaSubHeading}
             </h3>
-            <div className="grid grid-cols-3 gap-y-16 gap-x-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-10">
                 {filteredMediaItems.map((item) => {
                     const { node } = item;
                     return (
