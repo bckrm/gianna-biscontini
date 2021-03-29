@@ -3,7 +3,7 @@ import React from 'react';
 export default function LeadershipIcon() {
     return (
         <svg
-            width="192"
+            width="auto"
             height="114"
             viewBox="0 0 192 114"
             fill="none"
