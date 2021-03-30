@@ -131,7 +131,7 @@ export const query = graphql`
             }
         }
 
-        crimsonBgImage: file(relativePath: { regex: "/crimsonBg/" }) {
+        crimsonBgImage: file(relativePath: { regex: "/crimsonBgRect/" }) {
             id
             childImageSharp {
                 fluid(maxWidth: 2000) {
