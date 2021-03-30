@@ -57,7 +57,7 @@ export default function Header({ logoColor }) {
 
     return (
         <nav
-            className={`fixed py-8 transition-colors w-full z-10 ${scrolledNavStyles}`}
+            className={`fixed py-8 top-0 transition-colors w-full z-10 ${scrolledNavStyles}`}
             isScrolled={isScrolled}
         >
             <div className="container flex justify-between mx-auto text-black">
