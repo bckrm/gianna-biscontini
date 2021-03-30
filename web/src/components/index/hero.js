@@ -1,36 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import tw from 'twin.macro';
 import Img from 'gatsby-image';
 import MustardSvg from '../svgs/mustardGroup';
-
-const Section = styled.section`
-    ${tw`relative pb-20`}
-
-    max-width: 1440px;
-    margin: 0 auto;
-`;
-
-const TextContainer = styled.div`
-    ${tw`relative`}
-`;
-
-const Heading = styled.h1`
-    ${tw`absolute text-h1 text-brand-1 leading-none`}
-    max-width: 45rem;
-    top: 0;
-    transform: translateY(45%);
-    left: 5%;
-`;
-
-const ImageContainer = styled.div`
-    ${tw`absolute container`}
-
-    bottom: 0;
-    right: 0;
-    width: 500px;
-`;
 
 export default function Hero({ content }) {
     const {
@@ -39,16 +10,21 @@ export default function Hero({ content }) {
             asset: { fluid: imageData },
         },
     } = content;
+
     return (
-        <Section>
-            <TextContainer>
-                <MustardSvg />
-                <Heading>{heroHeading}</Heading>
-            </TextContainer>
-            <ImageContainer>
+        <section className="xl:pb-20 relative overflow-hidden w-full">
+            <div className="container">
+                <div>
+                    <MustardSvg />
+                </div>
+                <h1 className="absolute max-w-[95%] md:max-w-[45rem] text-h2 md:text-h1 text-brand-1 leading-none transform left-[2.5%] md:left-[5%] top-0 translate-y-[45%]">
+                    {heroHeading}
+                </h1>
+            </div>
+            <div className="container xl:absolute container bottom-0 right-0 w-[90%] md:w-[400px] xl:w-[500px]">
                 <Img fluid={imageData} />
-            </ImageContainer>
-        </Section>
+            </div>
+        </section>
     );
 }
 

@@ -1,18 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
-
-const SVG = styled.svg`
-    ${tw`top-0 left-0`}
-
-    transform: translateX(-20%);
-    z-index: -1;
-`;
 
 export default function MustardSvg() {
     return (
-        <SVG
-            width="100%"
+        <svg
+            className="relative top-0 left-0 transform translate-x-[-20%] z-[-1] w-[200%] md:w-full"
+            width="auto"
             height="691"
             viewBox="0 0 919 691"
             fill="none"
@@ -130,6 +122,6 @@ export default function MustardSvg() {
                 d="M569.052 524.732C596.503 524.732 618.757 502.49 618.757 475.052C618.757 447.615 596.503 425.373 569.052 425.373C541.6 425.373 519.347 447.615 519.347 475.052C519.347 502.49 541.6 524.732 569.052 524.732Z"
                 fill="#F2C44B"
             />
-        </SVG>
+        </svg>
     );
 }
