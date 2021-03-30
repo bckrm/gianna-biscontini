@@ -82,7 +82,7 @@ export const query = graphql`
             }
         }
 
-        plumBgImage: file(relativePath: { regex: "/plumBg/" }) {
+        plumBgImage: file(relativePath: { regex: "/crimsonBg/" }) {
             id
             childImageSharp {
                 fluid(maxWidth: 2000) {
