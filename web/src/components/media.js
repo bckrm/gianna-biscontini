@@ -5,12 +5,9 @@ import formatDate from '../helpers/dateFormatter';
 export default function Media({ data }) {
     const {
         mediaHeading: { mediaHeading },
-        mediaItems: { edges: rawMediaItems },
+        mediaItems: { featuredMedia },
     } = data;
 
-    // const mediaItems = rawMediaItems.filter((item) => {
-    //     return item.node.id !== featuredId;
-    // });
     function linkText(val) {
         let text;
         if (val === 'podcast') {
@@ -30,27 +27,27 @@ export default function Media({ data }) {
                 {mediaHeading}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-16 gap-x-10">
-                {rawMediaItems.map((item) => {
-                    const { node } = item;
-
+                {featuredMedia.map((item) => {
                     return (
                         <div
                             className="flex flex-col justify-between"
-                            key={node.id}
+                            key={item.id}
                         >
                             <div className="mb-8">
                                 <p className="font-display mb-2 text-h5 leading-none">
-                                    {node.title}
+                                    {item.title}
                                 </p>
-                                <p>{formatDate(node.pubDate)}</p>
+                                {item.pubDate && (
+                                    <p>{formatDate(item.pubDate)}</p>
+                                )}
                             </div>
                             <a
                                 className="link relative uppercase w-min"
-                                href={node.link}
+                                href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                {linkText(node.mediaType)}
+                                {linkText(item.mediaType)}
                             </a>
                         </div>
                     );
