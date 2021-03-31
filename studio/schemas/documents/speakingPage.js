@@ -40,8 +40,16 @@ export default {
         },
         {
             name: 'mediaHeading',
-            title: 'Recent Media Heading',
+            title: 'Featured Media Heading',
             type: 'string',
+        },
+        {
+            name: 'featuredMedia',
+            title: 'Featured Media',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'mediaItem' } }],
+            validation: (Rule) => Rule.max(4),
+            description: 'Select up to 4 media items.',
         },
         {
             name: 'testimonial',

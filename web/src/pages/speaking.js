@@ -51,16 +51,14 @@ export const query = graphql`
             mediaHeading
         }
 
-        mediaItems: allSanityMediaItem(limit: 4) {
-            edges {
-                node {
-                    description
-                    id
-                    link
-                    mediaType
-                    pubDate
-                    title
-                }
+        mediaItems: sanitySpeakingPage {
+            featuredMedia {
+                description
+                id
+                link
+                mediaType
+                pubDate
+                title
             }
         }
 
