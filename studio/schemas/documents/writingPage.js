@@ -15,9 +15,16 @@ export default {
             type: 'string',
         },
         {
-            name: 'introBody',
-            title: 'Intro Body',
-            type: 'text',
+            name: 'heading',
+            title: 'Description',
+            type: 'array',
+            of: [
+                {
+                    title: 'Block',
+                    type: 'block',
+                    styles: [{ title: 'Normal', value: 'normal' }],
+                },
+            ],
         },
         {
             name: 'featuredPost',

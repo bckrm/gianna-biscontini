@@ -12,7 +12,6 @@ import CTA from '../components/cta';
 export const query = graphql`
     query SpeakingPage {
         hero: sanitySpeakingPage {
-            heading
             pageTitle
             heroImage {
                 asset {
@@ -21,6 +20,7 @@ export const query = graphql`
                     }
                 }
             }
+            _rawHeading
         }
 
         eventHeading: sanitySpeakingPage {

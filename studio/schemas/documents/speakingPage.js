@@ -21,8 +21,15 @@ export default {
         },
         {
             name: 'heading',
-            title: 'Heading',
-            type: 'text',
+            title: 'Description',
+            type: 'array',
+            of: [
+                {
+                    title: 'Block',
+                    type: 'block',
+                    styles: [{ title: 'Normal', value: 'normal' }],
+                },
+            ],
         },
         {
             name: 'eventsHeading',

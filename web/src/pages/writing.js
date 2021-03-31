@@ -35,7 +35,7 @@ export const query = graphql`
         }
 
         featPost: sanityWritingPage {
-            introBody
+            _rawHeading
             post: featuredPost {
                 excerpt
                 id
@@ -77,7 +77,7 @@ export const query = graphql`
 
 export default function WritingPage({ data }) {
     const {
-        featPost: { introBody, post },
+        featPost: { _rawHeading, post },
         hero,
         plumBgImage,
         allPosts: { edges },
@@ -93,7 +93,7 @@ export default function WritingPage({ data }) {
     const filteredPosts = posts.filter((item) => item.id !== featuredPost.id);
 
     const introData = {
-        introBody,
+        _rawHeading,
         featuredPost,
     };
 

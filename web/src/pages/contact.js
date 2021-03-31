@@ -9,7 +9,7 @@ export const query = graphql`
     query ContactPage {
         hero: sanityContactPage {
             pageTitle
-            heading
+            _rawHeading
         }
 
         greenBgImage: file(relativePath: { regex: "/greenHeroBg/" }) {
