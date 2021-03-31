@@ -12,7 +12,7 @@ export const query = graphql`
     query AboutPage {
         hero: sanityAboutPage {
             pageTitle
-            heading
+            _rawHeading
         }
 
         credentials: sanityAboutPage {

@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 import Img from 'gatsby-image';
 import ContactForm from './contactForm';
+import BlockText from './block-content/blockText';
 
 export default function Hero({ background, data, isContact }) {
     const {
         childImageSharp: { fluid: bgImageData },
     } = background;
-    const { heading, pageTitle, heroImage } = data;
+    const { pageTitle, heroImage, _rawHeading } = data;
     const imageData = heroImage ? heroImage.asset.fluid : undefined;
 
     /*
@@ -43,7 +44,7 @@ export default function Hero({ background, data, isContact }) {
                     className={`container ${heroStyle} transform lg:mt-[-10rem]`}
                 >
                     <p className="block font-display text-h4 text-brand-2 ml-auto mb-10 md:w-1/2">
-                        {heading}
+                        {_rawHeading && <BlockText blocks={_rawHeading} />}
                     </p>
                     <ContactForm />
                 </div>
@@ -54,9 +55,9 @@ export default function Hero({ background, data, isContact }) {
                             <Img fluid={imageData} />
                         </div>
                     )}
-                    {heading && (
-                        <p className="block text-xl lg:w-1/2 ml-auto lg:px-16">
-                            {heading}
+                    {_rawHeading && (
+                        <p className="block text-xl lg:w-1/2 ml-auto lg:px-16 prose text-body">
+                            {_rawHeading && <BlockText blocks={_rawHeading} />}
                         </p>
                     )}
                 </div>
@@ -72,9 +73,9 @@ Hero.defaultProps = {
 Hero.propTypes = {
     background: PropTypes.object.isRequired,
     data: PropTypes.shape({
-        heading: PropTypes.string.isRequired,
         heroImage: PropTypes.object,
         pageTitle: PropTypes.string.isRequired,
+        _rawHeading: PropTypes.object.isRequired,
     }).isRequired,
     isContact: PropTypes.bool,
 };

@@ -12,8 +12,8 @@ import CTA from '../components/cta';
 export const query = graphql`
     query CoachingPage {
         hero: sanityCoachingPage {
-            heading
             pageTitle
+            _rawHeading
         }
 
         intro: sanityCoachingPage {

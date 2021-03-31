@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Link } from 'gatsby';
+import BlockText from './block-content/blockText';
 
 export default function FeaturedBlogIntro({ data }) {
-    const { featuredPost, introBody } = data;
+    const { featuredPost, _rawHeading } = data;
 
     return (
         <section className="container pt-24 mb-28">
@@ -23,7 +24,9 @@ export default function FeaturedBlogIntro({ data }) {
                         read more
                     </Link>
                 </div>
-                <p className="text-xl">{introBody}</p>
+                <p className="text-xl">
+                    <BlockText blocks={_rawHeading} />
+                </p>
             </div>
         </section>
     );
