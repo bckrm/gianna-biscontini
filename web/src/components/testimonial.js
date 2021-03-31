@@ -21,7 +21,7 @@ export default function Testimonial({ data }) {
             </div>
             <figure className="lg:col-start-4 lg:col-end-13 ">
                 <p
-                    className="block font-display inline relative text-h4 lg:text-[50px] text-brand-1 quote"
+                    className="block font-display relative text-h4 lg:text-[50px] text-brand-1 quote"
                     style={{ lineHeight: '50px' }}
                 >
                     {quote}
