@@ -111,8 +111,7 @@ export default function ContactForm() {
                             className={checkBoxLabelStyles}
                             htmlFor="speaking"
                         >
-                            Speaking Request: Virtual Event | Podcast |
-                            Interview
+                            Speaking Request
                             <input
                                 className={checkBoxInputStyles}
                                 id="speaking"
@@ -125,7 +124,7 @@ export default function ContactForm() {
                             className={checkBoxLabelStyles}
                             htmlFor="writing"
                         >
-                            Writing Requests
+                            Writing Request
                             <input
                                 className={checkBoxInputStyles}
                                 id="writing"
@@ -136,26 +135,40 @@ export default function ContactForm() {
                         </label>
                         <label
                             className={checkBoxLabelStyles}
-                            htmlFor="organizational"
+                            htmlFor="individual-coaching"
                         >
-                            Organizational Assessment + Advisory Project
+                            Individual Wellbeing Coaching
                             <input
                                 className={checkBoxInputStyles}
-                                id="organizational"
-                                name="organizational"
+                                id="indvidual-coaching"
+                                name="indvidual-coaching"
                                 onChange={handleChange}
                                 type="checkbox"
                             />
                         </label>
                         <label
                             className={checkBoxLabelStyles}
-                            htmlFor="coaching"
+                            htmlFor="leadership-coaching"
                         >
-                            Executive Coaching + Wellbeing Sessions
+                            Mindful Leadership Coaching
                             <input
                                 className={checkBoxInputStyles}
-                                id="coaching"
-                                name="coaching"
+                                id="leadership-coaching"
+                                name="leadership-coaching"
+                                onChange={handleChange}
+                                type="checkbox"
+                            />
+                        </label>
+                        <label
+                            className={checkBoxLabelStyles}
+                            htmlFor="organizational-analytics"
+                        >
+                            Organizational Analytics / Build a Culture of
+                            Wellbeing
+                            <input
+                                className={checkBoxInputStyles}
+                                id="organizational-analytics"
+                                name="organizational-analytics"
                                 onChange={handleChange}
                                 type="checkbox"
                             />
