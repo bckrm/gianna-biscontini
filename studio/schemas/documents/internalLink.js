@@ -16,6 +16,8 @@ export default {
                 { type: 'indexPage' },
                 { type: 'coachingPage' },
                 { type: 'speakingPage' },
+                { type: 'aboutPage' },
+                { type: 'contactPage' },
             ],
         },
     ],

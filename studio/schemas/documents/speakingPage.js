@@ -71,4 +71,9 @@ export default {
             type: 'cta',
         },
     ],
+    preview: {
+        select: {
+            title: 'pageTitle',
+        },
+    },
 };
