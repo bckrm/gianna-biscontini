@@ -34,6 +34,8 @@ export const query = graphql`
 
         testimonial: sanityAboutPage {
             testimonial {
+                name
+                description
                 quote
                 image {
                     asset {

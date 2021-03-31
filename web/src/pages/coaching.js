@@ -53,6 +53,8 @@ export const query = graphql`
 
         testimonial: sanityCoachingPage {
             testimonial {
+                name
+                description
                 quote
                 image {
                     asset {

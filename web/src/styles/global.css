@@ -85,6 +85,16 @@
     transform: translateY(100%);
 }
 
+.figcaption:before {
+    background-color: var(--brand-3);
+    content: '';
+    height: 2px;
+    position: absolute;
+    top: 0.85rem;
+    left: 0;
+    width: 0.75rem;
+}
+
 @media screen and (min-width: 1024px) {
     .quote:before {
         transform: translateY(-100%) translateX(-100%);
