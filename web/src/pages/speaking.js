@@ -66,6 +66,8 @@ export const query = graphql`
 
         testimonial: sanitySpeakingPage {
             testimonial {
+                name
+                description
                 quote
                 image {
                     asset {

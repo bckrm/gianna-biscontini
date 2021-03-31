@@ -6,9 +6,11 @@ export default function Testimonial({ data }) {
     const { testimonial } = data;
 
     const {
+        description,
         image: {
             asset: { fluid: imageData },
         },
+        name,
         quote,
     } = testimonial[0];
 
@@ -17,12 +19,20 @@ export default function Testimonial({ data }) {
             <div className="w-1/2 lg:w-64 justify-self-center lg:max-w-full lg:absolute overflow-hidden rounded-full transform -translate-y-1/4 lg:translate-y-[-40%]">
                 <Img className="max-w-full" fluid={imageData} />
             </div>
-            <h2
-                className="lg:col-start-4 lg:col-end-13 inline relative text-h4 lg:text-[50px] text-brand-1 quote"
-                style={{ lineHeight: '50px' }}
-            >
-                {quote}
-            </h2>
+            <figure className="lg:col-start-4 lg:col-end-13 ">
+                <p
+                    className="block font-display inline relative text-h4 lg:text-[50px] text-brand-1 quote"
+                    style={{ lineHeight: '50px' }}
+                >
+                    {quote}
+                </p>
+                <figcaption className="mt-4 pl-5 figcaption relative">
+                    <p className="font-display mb-2 text-xl text-brand-1">
+                        {name}
+                    </p>
+                    <p className="text-brand-1 text-body">{description}</p>
+                </figcaption>
+            </figure>
         </section>
     );
 }
