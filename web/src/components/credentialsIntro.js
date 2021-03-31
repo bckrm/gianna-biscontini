@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
-import formatDate from '../helpers/dateFormatter';
-
 export default function Credentials({ data }) {
     const {
         credentials,
@@ -31,9 +29,7 @@ export default function Credentials({ data }) {
                                 <h3 className="mb-2 text-brand-1 text-xl">
                                     {item.name}
                                 </h3>
-                                <p className="text-xl">
-                                    {formatDate(item.date)} | {item.institution}
-                                </p>
+                                <p className="text-xl">{item.institution}</p>
                             </div>
                         );
                     })}
