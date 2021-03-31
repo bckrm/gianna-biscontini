@@ -27,4 +27,9 @@ export default {
             ],
         },
     ],
+    preview: {
+        select: {
+            title: 'pageTitle',
+        },
+    },
 };

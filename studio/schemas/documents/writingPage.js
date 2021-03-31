@@ -33,4 +33,9 @@ export default {
             of: [{ type: 'reference', to: { type: 'post' } }],
         },
     ],
+    preview: {
+        select: {
+            title: 'pageTitle',
+        },
+    },
 };
