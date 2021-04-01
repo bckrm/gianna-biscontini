@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { graphql, useStaticQuery } from 'gatsby';
 import { createGlobalStyle } from 'styled-components';
 
 import Header from '../components/header';
@@ -25,12 +26,34 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default function Layout({ children, logoColor }) {
+    const data = useStaticQuery(
+        graphql`
+            query sanitySettings {
+                footerData: sanitySettings {
+                    footerImage {
+                        asset {
+                            fluid(maxWidth: 500) {
+                                ...GatsbySanityImageFluid
+                            }
+                        }
+                    }
+                    socialAccounts {
+                        accountName
+                        accountUrl
+                        id
+                    }
+                }
+            }
+        `,
+    );
+
+    const { footerData } = data;
     return (
         <>
             <GlobalStyles />
             <Header logoColor={logoColor} />
             <main>{children}</main>
-            <Footer />
+            <Footer data={footerData} />
         </>
     );
 }
