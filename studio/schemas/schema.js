@@ -16,6 +16,8 @@ import indexPage from './documents/indexPage';
 import internalLink from './documents/internalLink';
 import mediaItem from './documents/mediaItem';
 import post from './documents/post';
+import settings from './documents/settings';
+import socialAccount from './documents/socialAccount';
 import speakingPage from './documents/speakingPage';
 import testimonial from './documents/testimonial';
 import writingPage from './documents/writingPage';
@@ -44,6 +46,8 @@ export default createSchema({
         internalLink,
         mediaItem,
         post,
+        settings,
+        socialAccount,
         speakingPage,
         testimonial,
         writingPage,

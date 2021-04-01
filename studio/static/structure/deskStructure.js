@@ -57,6 +57,12 @@ export default () => {
                         .schemaType('contactPage')
                         .documentId('contactPage'),
                 ),
+            S.listItem()
+                .title('Settings')
+                .icon(VscFile)
+                .child(
+                    S.document().schemaType('settings').documentId('settings'),
+                ),
             ...S.documentTypeListItems().filter(
                 (listItem) =>
                     ![
@@ -64,6 +70,7 @@ export default () => {
                         'coachingPage',
                         'contactPage',
                         'indexPage',
+                        'settings',
                         'speakingPage',
                         'writingPage',
                     ].includes(listItem.getId()),

@@ -1,26 +1,67 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {
+    FaFacebookSquare,
+    FaInstagram,
+    FaLinkedinIn,
+    FaTwitter,
+} from 'react-icons/fa';
 
 import { Link } from 'gatsby';
-import FullMark from './logos/fullMark';
+import Img from 'gatsby-image';
 import CurvedDivider from './svgs/curvedDivider';
-import LinkedinLogo from './svgs/linkedinLogo';
-import InstagramLogo from './svgs/instagramLogo';
 
-export default function Footer() {
+export default function Footer({ data }) {
+    const {
+        footerImage: {
+            asset: { fluid: imageData },
+        },
+        socialAccounts,
+    } = data;
+
     return (
         <footer className="bg-brand-1 py-12">
-            <div className="flex flex-col items-center">
-                <FullMark />
+            <div className="container flex flex-col items-center">
+                <Link className="mb-2 w-full md:w-1/4" to="/">
+                    <Img fluid={imageData} />
+                </Link>
                 <CurvedDivider />
-                <div className="flex justify-between items-center w-20">
-                    <Link to="/#">
-                        <LinkedinLogo />
-                    </Link>
-                    <Link className="mt-1" to="/#">
-                        <InstagramLogo />
-                    </Link>
+                <div className="flex justify-evenly items-center mt-2 w-full md:w-1/4">
+                    {socialAccounts.map((item) => {
+                        const { accountName, accountUrl, id } = item;
+
+                        const socialIcons = {
+                            Facebook: (
+                                <FaFacebookSquare className="h-full w-full" />
+                            ),
+                            Instagram: (
+                                <FaInstagram className="h-full w-full" />
+                            ),
+                            Linkedin: (
+                                <FaLinkedinIn className="h-full w-full" />
+                            ),
+                            Twitter: <FaTwitter className="h-full w-full" />,
+                        };
+
+                        return (
+                            <a
+                                className="text-white w-8 h-8"
+                                href={accountUrl}
+                                key={id}
+                            >
+                                {socialIcons[accountName]}
+                            </a>
+                        );
+                    })}
                 </div>
             </div>
         </footer>
     );
 }
+
+Footer.propTypes = {
+    data: PropTypes.shape({
+        footerImage: PropTypes.object.isRequired,
+        socialAccounts: PropTypes.array.isRequired,
+    }).isRequired,
+};
