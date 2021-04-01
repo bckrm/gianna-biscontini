@@ -72,10 +72,19 @@ export const query = graphql`
                 heading
                 link {
                     link {
+                        ... on SanityAboutPage {
+                            pageTitle
+                        }
                         ... on SanityCoachingPage {
                             pageTitle
                         }
+                        ... on SanityContactPage {
+                            pageTitle
+                        }
                         ... on SanityIndexPage {
+                            pageTitle
+                        }
+                        ... on SanitySpeakingPage {
                             pageTitle
                         }
                     }
