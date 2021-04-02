@@ -28,7 +28,7 @@ export default function BlogPreview({ data, imageAspectRatio }) {
     return (
         <figure key={data.id}>
             <img
-                className="mb-5"
+                className="mb-5 w-full"
                 src={imageUrlFor(buildImageObj(data.mainImage))
                     .width(500)
                     .height(Math.floor(imageAspectRatio * 500))
