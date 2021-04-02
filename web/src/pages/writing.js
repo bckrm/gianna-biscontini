@@ -101,7 +101,7 @@ export default function WritingPage({ data, location }) {
         <Layout>
             <Hero background={plumBgImage} data={hero} location={location} />
             <FeaturedBlogIntro data={introData} />
-            <div className="container grid grid-cols-3 gap-10 mb-28">
+            <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-28">
                 {filteredPosts.map((post) => {
                     return <BlogPreview data={post} />;
                 })}
