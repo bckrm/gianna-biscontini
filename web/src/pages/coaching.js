@@ -104,7 +104,7 @@ export const query = graphql`
     }
 `;
 
-export default function CoachingPage({ data }) {
+export default function CoachingPage({ data, location }) {
     const {
         categories,
         categoryOptions,
@@ -116,7 +116,7 @@ export default function CoachingPage({ data }) {
     } = data;
     return (
         <Layout>
-            <Hero background={plumBgImage} data={hero} />
+            <Hero background={plumBgImage} data={hero} location={location} />
             <Intro data={intro} />
             <Categories data={categories} options={categoryOptions} />
             <Testimonial data={testimonial} />
@@ -135,4 +135,5 @@ CoachingPage.propTypes = {
         plumBgImage: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
     }).isRequired,
+    location: PropTypes.object.isRequired,
 };

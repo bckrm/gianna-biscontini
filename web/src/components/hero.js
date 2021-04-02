@@ -4,8 +4,13 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import ContactForm from './contactForm';
 import BlockText from './block-content/blockText';
+import SvgGroup1 from './svgs/group1';
+import SvgGroup2 from './svgs/group2';
+import SvgGroup3 from './svgs/group3';
+import SvgGroup4 from './svgs/group4';
+import SvgGroup5 from './svgs/group5';
 
-export default function Hero({ background, data, isContact }) {
+export default function Hero({ background, data, isContact, location }) {
     const {
         childImageSharp: { fluid: bgImageData },
     } = background;
@@ -22,8 +27,20 @@ export default function Hero({ background, data, isContact }) {
     // const transform = imageData ? 'translate-y-[50%]' : 'translate-y-[200%]';
     const heroStyle = imageData ? 'mb-52 mt-8' : 'mb-28 mt-8';
 
+    const { pathname } = location;
+
+    const name = pathname.slice(1);
+
+    const icon = {
+        about: <SvgGroup3 />,
+        coaching: <SvgGroup1 />,
+        contact: <SvgGroup4 />,
+        speaking: <SvgGroup2 />,
+        writing: <SvgGroup5 />,
+    };
+
     return (
-        <section>
+        <section className="relative">
             <div className="relative overflow-hidden top-0 left-0 w-full md:w-3/4 lg:w-1/2 z-[-1]">
                 <div className="w-[125%] md:w-full">
                     <Img
@@ -38,6 +55,7 @@ export default function Hero({ background, data, isContact }) {
                     </h1>
                 </div>
             </div>
+            {icon[name]}
 
             {isContact ? (
                 <div
@@ -78,4 +96,5 @@ Hero.propTypes = {
         _rawHeading: PropTypes.object.isRequired,
     }).isRequired,
     isContact: PropTypes.bool,
+    location: PropTypes.object.isRequired,
 };

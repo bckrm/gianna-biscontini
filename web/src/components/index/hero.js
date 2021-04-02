@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import MustardSvg from '../svgs/mustardGroup';
+import IndexHero from '../svgs/indexHero';
 
 export default function Hero({ content }) {
     const {
@@ -21,9 +22,10 @@ export default function Hero({ content }) {
                     {heroHeading}
                 </h1>
             </div>
-            <div className="container xl:absolute container bottom-0 right-0 w-[90%] md:w-[400px] xl:w-[500px]">
+            <div className="container lg:absolute container bottom-0 right-0 transform lg:-translate-x-1/4 w-[90%] md:w-[400px] xl:w-[500px]">
                 <Img fluid={imageData} />
             </div>
+            <IndexHero />
         </section>
     );
 }

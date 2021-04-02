@@ -75,7 +75,7 @@ export const query = graphql`
     }
 `;
 
-export default function WritingPage({ data }) {
+export default function WritingPage({ data, location }) {
     const {
         featPost: { _rawHeading, post },
         hero,
@@ -99,7 +99,7 @@ export default function WritingPage({ data }) {
 
     return (
         <Layout>
-            <Hero background={plumBgImage} data={hero} />
+            <Hero background={plumBgImage} data={hero} location={location} />
             <FeaturedBlogIntro data={introData} />
             <div className="container grid grid-cols-3 gap-10 mb-28">
                 {filteredPosts.map((post) => {
@@ -112,4 +112,5 @@ export default function WritingPage({ data }) {
 
 WritingPage.propTypes = {
     data: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
 };

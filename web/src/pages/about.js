@@ -85,12 +85,12 @@ export const query = graphql`
     }
 `;
 
-export default function AboutPage({ data }) {
+export default function AboutPage({ data, location }) {
     const { credentials, cta, hero, mustardBgImage, testimonial } = data;
 
     return (
         <Layout>
-            <Hero background={mustardBgImage} data={hero} />
+            <Hero background={mustardBgImage} data={hero} location={location} />
             <Credentials data={credentials} />
             <Testimonial data={testimonial} />
             <CTA data={cta} />
@@ -106,4 +106,5 @@ AboutPage.propTypes = {
         mustardBgImage: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
     }).isRequired,
+    location: PropTypes.object.isRequired,
 };

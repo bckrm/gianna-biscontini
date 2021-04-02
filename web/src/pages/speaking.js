@@ -115,7 +115,7 @@ export const query = graphql`
     }
 `;
 
-export default function SpeakingPage({ data }) {
+export default function SpeakingPage({ data, location }) {
     const {
         cta,
         eventHeading,
@@ -141,7 +141,7 @@ export default function SpeakingPage({ data }) {
 
     return (
         <Layout>
-            <Hero background={greenBgImage} data={hero} />
+            <Hero background={greenBgImage} data={hero} location={location} />
             <Events data={eventData} />
             <Media data={mediaData} />
             <Testimonial data={testimonial} />
@@ -162,4 +162,5 @@ SpeakingPage.propTypes = {
         mediaItems: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
     }).isRequired,
+    location: PropTypes.object.isRequired,
 };

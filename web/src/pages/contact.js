@@ -23,11 +23,16 @@ export const query = graphql`
     }
 `;
 
-export default function ContactPage({ data }) {
+export default function ContactPage({ data, location }) {
     const { hero, greenBgImage } = data;
     return (
         <Layout>
-            <Hero background={greenBgImage} data={hero} isContact />
+            <Hero
+                background={greenBgImage}
+                data={hero}
+                isContact
+                location={location}
+            />
         </Layout>
     );
 }
@@ -37,4 +42,5 @@ ContactPage.propTypes = {
         hero: PropTypes.object.isRequired,
         greenBgImage: PropTypes.object.isRequired,
     }).isRequired,
+    location: PropTypes.object.isRequired,
 };
