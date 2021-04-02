@@ -29,7 +29,9 @@ export default function Hero({ background, data, isContact, location }) {
 
     const { pathname } = location;
 
-    const name = pathname.slice(1);
+    // remove all forward slashes from pathname
+    // gatsby prepends a / in local dev but appends in production
+    const cleanPathname = pathname.replace(/\//, '');
 
     const icon = {
         about: <SvgGroup3 />,
@@ -55,7 +57,7 @@ export default function Hero({ background, data, isContact, location }) {
                     </h1>
                 </div>
             </div>
-            {icon[name]}
+            {icon[cleanPathname]}
 
             {isContact ? (
                 <div
