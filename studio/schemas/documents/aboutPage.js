@@ -41,7 +41,6 @@ export default {
             title: 'Credentials List',
             type: 'array',
             of: [{ type: 'reference', to: { type: 'credentials' } }],
-            validation: (Rule) => Rule.max(3),
         },
         {
             name: 'testimonial',
