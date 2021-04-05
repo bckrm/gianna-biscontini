@@ -21,7 +21,7 @@ export const query = graphql`
             introBody
             introImage {
                 asset {
-                    fluid(maxWidth: 400) {
+                    fluid(maxWidth: 1200) {
                         ...GatsbySanityImageFluid
                     }
                 }
