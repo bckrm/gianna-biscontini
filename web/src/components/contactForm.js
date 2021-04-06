@@ -54,9 +54,11 @@ export default function ContactForm() {
                     method="post"
                     onSubmit={handleSubmit}
                     data-netlify="true"
+                    name="contact"
                     netlify-honeypot="bot-field"
                 >
                     <input className="hidden" name="bot-field" />
+                    <input className="hidden" name="contact" value="contact" />
                     <div className="md:flex">
                         <label
                             className={`md:w-1/2 ${labelStyles}`}
