@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import ContactForm from './contactForm';
 import BlockText from './block-content/blockText';
-import SvgGroup1 from './svgs/group1';
+// import SvgGroup1 from './svgs/group1';
 import SvgGroup2 from './svgs/group2';
-import SvgGroup3 from './svgs/group3';
-import SvgGroup4 from './svgs/group4';
-import SvgGroup5 from './svgs/group5';
+// import SvgGroup3 from './svgs/group3';
+// import SvgGroup4 from './svgs/group4';
+// import SvgGroup5 from './svgs/group5';
 
-export default function Hero({ background, data, isContact, location }) {
+export default function Hero({ background, data, isContact }) {
     const {
         childImageSharp: { fluid: bgImageData },
     } = background;
@@ -27,19 +27,19 @@ export default function Hero({ background, data, isContact, location }) {
     // const transform = imageData ? 'translate-y-[50%]' : 'translate-y-[200%]';
     const heroStyle = imageData ? 'mb-52 mt-8' : 'mb-28 mt-8';
 
-    const { pathname } = location;
+    // const { pathname } = location;
 
     // remove all forward slashes from pathname
     // gatsby prepends a / in local dev but appends in production
-    const cleanPathname = pathname.replace(/\//g, '');
+    // const cleanPathname = pathname.replace(/\//g, '');
 
-    const icon = {
-        about: <SvgGroup3 />,
-        coaching: <SvgGroup1 />,
-        contact: <SvgGroup4 />,
-        speaking: <SvgGroup2 />,
-        writing: <SvgGroup5 />,
-    };
+    // const icon = {
+    //     about: <SvgGroup3 />,
+    //     coaching: <SvgGroup1 />,
+    //     contact: <SvgGroup4 />,
+    //     speaking: <SvgGroup2 />,
+    //     writing: <SvgGroup5 />,
+    // };
 
     return (
         <section className="relative">
@@ -57,7 +57,7 @@ export default function Hero({ background, data, isContact, location }) {
                     </h1>
                 </div>
             </div>
-            {icon[cleanPathname]}
+            <SvgGroup2 />
 
             {isContact ? (
                 <div
@@ -98,5 +98,4 @@ Hero.propTypes = {
         _rawHeading: PropTypes.object.isRequired,
     }).isRequired,
     isContact: PropTypes.bool,
-    location: PropTypes.object.isRequired,
 };
