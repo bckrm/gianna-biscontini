@@ -35,7 +35,7 @@ export default function Media({ data }) {
                         >
                             <div className="mb-8">
                                 <p className="font-display mb-2 text-h5 leading-none">
-                                    {item.title}
+                                    {item.description}
                                 </p>
                                 {item.pubDate && (
                                     <p>{formatDate(item.pubDate)}</p>
