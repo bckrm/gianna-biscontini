@@ -32,6 +32,11 @@ export default {
             type: 'array',
             of: [{ type: 'reference', to: { type: 'post' } }],
         },
+        {
+            name: 'seo',
+            title: 'SEO',
+            type: 'seo',
+        },
     ],
     preview: {
         select: {

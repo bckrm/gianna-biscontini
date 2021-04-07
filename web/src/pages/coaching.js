@@ -8,6 +8,7 @@ import Intro from '../components/intro';
 import Categories from '../components/categories';
 import Testimonial from '../components/testimonial';
 import CTA from '../components/cta';
+import Seo from '../components/seo';
 
 export const query = graphql`
     query CoachingPage {
@@ -101,6 +102,21 @@ export const query = graphql`
                 }
             }
         }
+
+        seo: sanityAboutPage {
+            seo {
+                ogDescription
+                ogImage {
+                    asset {
+                        fixed(width: 600) {
+                            src
+                        }
+                    }
+                }
+                pageDescription
+                pageTitle
+            }
+        }
     }
 `;
 
@@ -112,10 +128,12 @@ export default function CoachingPage({ data, location }) {
         hero,
         intro,
         plumBgImage,
+        seo,
         testimonial,
     } = data;
     return (
         <Layout>
+            <Seo data={seo} />
             <Hero background={plumBgImage} data={hero} location={location} />
             <Intro data={intro} />
             <Categories data={categories} options={categoryOptions} />
@@ -133,6 +151,7 @@ CoachingPage.propTypes = {
         hero: PropTypes.object.isRequired,
         intro: PropTypes.object.isRequired,
         plumBgImage: PropTypes.object.isRequired,
+        seo: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,

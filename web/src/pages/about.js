@@ -7,6 +7,7 @@ import Hero from '../components/hero';
 import Credentials from '../components/credentialsIntro';
 import Testimonial from '../components/testimonial';
 import CTA from '../components/cta';
+import Seo from '../components/seo';
 
 export const query = graphql`
     query AboutPage {
@@ -82,14 +83,30 @@ export const query = graphql`
                 }
             }
         }
+
+        seo: sanityAboutPage {
+            seo {
+                ogDescription
+                ogImage {
+                    asset {
+                        fixed(width: 600) {
+                            src
+                        }
+                    }
+                }
+                pageDescription
+                pageTitle
+            }
+        }
     }
 `;
 
 export default function AboutPage({ data, location }) {
-    const { credentials, cta, hero, mustardBgImage, testimonial } = data;
+    const { credentials, cta, hero, mustardBgImage, testimonial, seo } = data;
 
     return (
         <Layout>
+            <Seo data={seo} />
             <Hero background={mustardBgImage} data={hero} location={location} />
             <Credentials data={credentials} />
             <Testimonial data={testimonial} />
@@ -104,6 +121,7 @@ AboutPage.propTypes = {
         credentials: PropTypes.object.isRequired,
         hero: PropTypes.object.isRequired,
         mustardBgImage: PropTypes.object.isRequired,
+        seo: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,

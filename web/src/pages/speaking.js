@@ -8,6 +8,7 @@ import Events from '../components/events';
 import Media from '../components/media';
 import Testimonial from '../components/testimonial';
 import CTA from '../components/cta';
+import Seo from '../components/seo';
 
 export const query = graphql`
     query SpeakingPage {
@@ -112,6 +113,21 @@ export const query = graphql`
                 }
             }
         }
+
+        seo: sanitySpeakingPage {
+            seo {
+                ogDescription
+                ogImage {
+                    asset {
+                        fixed(width: 600) {
+                            src
+                        }
+                    }
+                }
+                pageDescription
+                pageTitle
+            }
+        }
     }
 `;
 
@@ -125,6 +141,7 @@ export default function SpeakingPage({ data, location }) {
         hero,
         mediaHeading,
         mediaItems,
+        seo,
         testimonial,
     } = data;
 
@@ -141,6 +158,7 @@ export default function SpeakingPage({ data, location }) {
 
     return (
         <Layout>
+            <Seo data={seo} />
             <Hero background={greenBgImage} data={hero} location={location} />
             <Events data={eventData} />
             <Media data={mediaData} />
@@ -160,6 +178,7 @@ SpeakingPage.propTypes = {
         hero: PropTypes.object.isRequired,
         mediaHeading: PropTypes.string.isRequired,
         mediaItems: PropTypes.object.isRequired,
+        seo: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,

@@ -54,6 +54,11 @@ export default {
             title: 'CTA',
             type: 'cta',
         },
+        {
+            name: 'seo',
+            title: 'SEO',
+            type: 'seo',
+        },
     ],
     preview: {
         select: {

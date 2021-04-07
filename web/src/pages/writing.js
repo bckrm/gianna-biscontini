@@ -6,6 +6,7 @@ import Layout from '../layouts/layout';
 import Hero from '../components/hero';
 import FeaturedBlogIntro from '../components/featuredBlogIntro';
 import BlogPreview from '../components/blog/blogPreview';
+import Seo from '../components/seo';
 
 export const query = graphql`
     fragment SanityImage on SanityMainImage {
@@ -72,6 +73,21 @@ export const query = graphql`
                 }
             }
         }
+
+        seo: sanityWritingPage {
+            seo {
+                ogDescription
+                ogImage {
+                    asset {
+                        fixed(width: 600) {
+                            src
+                        }
+                    }
+                }
+                pageDescription
+                pageTitle
+            }
+        }
     }
 `;
 
@@ -81,6 +97,7 @@ export default function WritingPage({ data, location }) {
         hero,
         plumBgImage,
         allPosts: { edges },
+        seo,
     } = data;
 
     // Todo change to reduce()
@@ -99,6 +116,7 @@ export default function WritingPage({ data, location }) {
 
     return (
         <Layout>
+            <Seo data={seo} />
             <Hero background={plumBgImage} data={hero} location={location} />
             <FeaturedBlogIntro data={introData} />
             <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-28">
