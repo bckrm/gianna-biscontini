@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import formatDate from '../helpers/dateFormatter';
 
 export default function Events({ data }) {
     const {
@@ -36,9 +35,7 @@ export default function Events({ data }) {
                             <p className="font-display font-normal mb-4 text-h6 leading-none">
                                 {item.name}
                             </p>
-                            <p className="text-xl">
-                                {formatDate(item.date)} | {item.location}
-                            </p>
+                            <p className="text-xl">{item.location}</p>
                         </li>
                     );
                 })}
