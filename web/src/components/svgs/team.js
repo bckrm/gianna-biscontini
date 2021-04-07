@@ -3,7 +3,7 @@ import React from 'react';
 export default function TeamIcon() {
     return (
         <svg
-            className="transform translate-y-[-9%]"
+            className="transform translate-y-[-9%] max-w-full"
             width="auto"
             height="137"
             viewBox="0 0 192 137"
