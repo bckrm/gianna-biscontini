@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from './layout';
 import BlogPost from '../components/blog/blogPost';
+import SEO from '../components/seo';
 
 export const query = graphql`
     query BlogPostTemplateQuery($id: String!) {
@@ -36,8 +37,19 @@ export const query = graphql`
 
 export default function BlogPostLayout({ data }) {
     const { post } = data;
+
+    const { title: pageTitle, excerpt: pageDescription } = post;
+
+    const seo = {
+        seo: {
+            pageTitle,
+            pageDescription,
+        },
+    };
+
     return (
         <Layout logoColor="var(--brand-1)">
+            <SEO data={seo} />
             <BlogPost data={post} />
         </Layout>
     );

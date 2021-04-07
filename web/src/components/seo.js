@@ -41,7 +41,7 @@ export default function SEO({ data }) {
                 },
                 {
                     property: `og:description`,
-                    content: ogDescription,
+                    content: ogDescription || pageDescription,
                 },
                 {
                     property: `og:type`,
@@ -49,7 +49,7 @@ export default function SEO({ data }) {
                 },
                 {
                     name: `twitter:card`,
-                    content: `summary`,
+                    content: ogDescription || pageDescription,
                 },
                 // {
                 //     name: `twitter:creator`,
@@ -61,7 +61,7 @@ export default function SEO({ data }) {
                 },
                 {
                     name: `twitter:description`,
-                    content: ogDescription,
+                    content: ogDescription || pageDescription,
                 },
             ].concat()}
         />
@@ -75,5 +75,12 @@ export default function SEO({ data }) {
 // };
 
 SEO.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+        seo: PropTypes.shape({
+            ogDescription: PropTypes.string,
+            ogImage: PropTypes.object,
+            pageDescription: PropTypes.string.isRequired,
+            pageTitle: PropTypes.string.isRequired,
+        }).isRequired,
+    }).isRequired,
 };
