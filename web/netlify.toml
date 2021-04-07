@@ -110,9 +110,9 @@
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
-  for = "/*"
-  [headers.value]
-    X-Robots-Tag = 'noindex, nofollow'
+#   for = "/*"
+#   [headers.value]
+#     X-Robots-Tag = 'noindex, nofollow'
 
   # [headers.values]
   # X-Frame-Options = "DENY"
