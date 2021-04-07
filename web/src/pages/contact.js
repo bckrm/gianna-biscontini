@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Layout from '../layouts/layout';
 import Hero from '../components/hero';
+import Seo from '../components/seo';
 
 export const query = graphql`
     query ContactPage {
@@ -20,13 +21,29 @@ export const query = graphql`
                 }
             }
         }
+
+        seo: sanityContactPage {
+            seo {
+                ogDescription
+                ogImage {
+                    asset {
+                        fixed(width: 600) {
+                            src
+                        }
+                    }
+                }
+                pageDescription
+                pageTitle
+            }
+        }
     }
 `;
 
 export default function ContactPage({ data, location }) {
-    const { hero, greenBgImage } = data;
+    const { hero, greenBgImage, seo } = data;
     return (
         <Layout>
+            <Seo data={seo} />
             <Hero
                 background={greenBgImage}
                 data={hero}
@@ -41,6 +58,7 @@ ContactPage.propTypes = {
     data: PropTypes.shape({
         hero: PropTypes.object.isRequired,
         greenBgImage: PropTypes.object.isRequired,
+        seo: PropTypes.object.isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
 };

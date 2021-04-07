@@ -8,6 +8,7 @@ import Intro from '../components/index/intro';
 import Testimonial from '../components/testimonial';
 import Media from '../components/index/media';
 import Blog from '../components/index/blog';
+import Seo from '../components/seo';
 
 export const query = graphql`
     fragment SanityImage on SanityMainImage {
@@ -150,6 +151,21 @@ export const query = graphql`
                 }
             }
         }
+
+        seo: sanityIndexPage {
+            seo {
+                ogDescription
+                ogImage {
+                    asset {
+                        fixed(width: 600) {
+                            src
+                        }
+                    }
+                }
+                pageDescription
+                pageTitle
+            }
+        }
     }
 `;
 
@@ -162,11 +178,13 @@ export default function IndexPage({ data }) {
         media,
         mediaItems: { edges: mediaItems },
         rawPosts,
+        seo,
         testimonial,
     } = data;
 
     return (
         <Layout>
+            <Seo data={seo} />
             <Hero content={hero} />
             <Intro content={intro} image={crimsonBgImage} />
             <Testimonial data={testimonial} />
@@ -185,6 +203,7 @@ IndexPage.propTypes = {
         media: PropTypes.object.isRequired,
         mediaItems: PropTypes.object.isRequired,
         rawPosts: PropTypes.array.isRequired,
+        seo: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
     }).isRequired,
 };

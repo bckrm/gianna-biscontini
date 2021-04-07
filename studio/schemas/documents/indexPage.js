@@ -81,6 +81,11 @@ export default {
             title: 'Blog Section Heading',
             type: 'string',
         },
+        {
+            name: 'seo',
+            title: 'SEO',
+            type: 'seo',
+        },
     ],
     preview: {
         select: {
