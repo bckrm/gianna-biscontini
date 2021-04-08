@@ -8,7 +8,17 @@ export default function MainNav({ navItems }) {
             {navItems.map((item) => {
                 return (
                     <li className="ml-8 text-xl" key={item.link}>
-                        <Link href={item.link}>{item.name}</Link>
+                        <Link
+                            className="relative hover:nav-link-hover"
+                            to={`${item.link}`}
+                            getProps={({ isPartiallyCurrent }) => {
+                                return isPartiallyCurrent
+                                    ? { className: 'relative nav-link-active' }
+                                    : null;
+                            }}
+                        >
+                            {item.name}
+                        </Link>
                     </li>
                 );
             })}
