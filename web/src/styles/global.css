@@ -23,6 +23,21 @@
     }
 }
 
+@layer utilities {
+    @variants hover, focus {
+        .nav-link-hover:before {
+            background-color: var(--brand-4);
+            bottom: 0;
+            content: '';
+            height: 55%;
+            left: -2%;
+            position: absolute;
+            width: 104%;
+            z-index: -1;
+        }
+    }
+}
+
 .block-content p {
     margin-bottom: 1rem;
 }
@@ -45,6 +60,17 @@
     top: 50%;
     transform: translateY(-100%);
     width: 0.25rem;
+}
+
+.nav-link-active:before {
+    background-color: var(--brand-4);
+    bottom: 0;
+    content: '';
+    height: 55%;
+    left: -2%;
+    position: absolute;
+    width: 104%;
+    z-index: -1;
 }
 
 .link:before {
