@@ -11,6 +11,28 @@ import CTA from '../components/cta';
 import Seo from '../components/seo';
 
 export const query = graphql`
+    fragment SanitySeoImage on SanitySeoImage {
+        crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+        }
+        hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+        }
+        asset {
+            _id
+        }
+    }
+
     query SpeakingPage {
         hero: sanitySpeakingPage {
             pageTitle
@@ -118,11 +140,7 @@ export const query = graphql`
             seo {
                 ogDescription
                 ogImage {
-                    asset {
-                        fixed(width: 600) {
-                            src
-                        }
-                    }
+                    ...SanitySeoImage
                 }
                 pageDescription
                 pageTitle

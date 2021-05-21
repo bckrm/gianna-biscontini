@@ -32,6 +32,29 @@ export const query = graphql`
             _id
         }
     }
+
+    fragment SanitySeoImage on SanitySeoImage {
+        crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+        }
+        hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+        }
+        asset {
+            _id
+        }
+    }
+
     query IndexPage {
         hero: sanityIndexPage {
             heroHeading
@@ -156,11 +179,7 @@ export const query = graphql`
             seo {
                 ogDescription
                 ogImage {
-                    asset {
-                        fixed(width: 600) {
-                            src
-                        }
-                    }
+                    ...SanitySeoImage
                 }
                 pageDescription
                 pageTitle

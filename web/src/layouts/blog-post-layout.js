@@ -6,6 +6,28 @@ import BlogPost from '../components/blog/blogPost';
 import SEO from '../components/seo';
 
 export const query = graphql`
+    fragment SanityImage on SanityMainImage {
+        crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+        }
+        hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+        }
+        asset {
+            _id
+        }
+    }
+
     query BlogPostTemplateQuery($id: String!) {
         post: sanityPost(id: { eq: $id }) {
             id
@@ -24,26 +46,27 @@ export const query = graphql`
             excerpt
             _rawBody(resolveReferences: { maxDepth: 5 })
         }
+
+        seoData: sanityPost(id: { eq: $id }) {
+            excerpt
+            mainImage {
+                ...SanityImage
+            }
+            title
+        }
     }
 `;
 
-// {post && (
-//     <SEO
-//         title={post.title || 'Untitled'}
-//         description={toPlainText(post._rawExcerpt)}
-//         image={post.mainImage}
-//     />
-// )}
-
 export default function BlogPostLayout({ data }) {
-    const { post } = data;
+    const { post, seoData } = data;
 
-    const { title: pageTitle, excerpt: pageDescription } = post;
+    const { excerpt, mainImage, title } = seoData;
 
     const seo = {
         seo: {
-            pageTitle,
-            pageDescription,
+            ogImage: mainImage,
+            pageTitle: title,
+            pageDescription: excerpt,
         },
     };
 

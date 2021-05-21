@@ -22,7 +22,7 @@ export default {
         {
             name: 'ogImage',
             title: 'Open Graph Image',
-            type: 'image',
+            type: 'seoImage',
         },
     ],
 };
