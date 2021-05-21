@@ -28,6 +28,7 @@ import cta from './objects/cta';
 import excerptPortableText from './objects/excerptPortableText';
 import mainImage from './objects/mainImage';
 import seo from './objects/seo';
+import seoImage from './objects/seoImage';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -59,5 +60,6 @@ export default createSchema({
         excerptPortableText,
         mainImage,
         seo,
+        seoImage,
     ]),
 });

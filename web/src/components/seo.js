@@ -1,26 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-// import { useStaticQuery, graphql } from 'gatsby';
-//  description, lang, meta, title
+import { imageUrlFor, buildImageObj } from '../helpers/buildImageObj';
+
 export default function SEO({ data }) {
     const {
-        seo: { pageTitle, pageDescription, ogDescription },
+        seo: { pageTitle, pageDescription, ogDescription, ogImage },
     } = data;
-    // const { site } = useStaticQuery(
-    //     graphql`
-    //         query {
-    //             site {
-    //                 siteMetadata {
-    //                     title
-    //                     description
-    //                 }
-    //             }
-    //         }
-    //     `,
-    // );
 
-    // const metaDescription = description || site.siteMetadata.description;
+    const imageSrcUrl = imageUrlFor(buildImageObj(ogImage))
+        .width(1200)
+        .height(Math.floor(630))
+        .fit('crop')
+        .auto('format')
+        .url();
 
     return (
         <Helmet
@@ -28,8 +21,6 @@ export default function SEO({ data }) {
                 lang: 'en',
             }}
             title={pageTitle}
-            // titleTemplate={`%s | ${site.siteMetadata.title}`}
-            // titleTemplate={`${title}`}
             meta={[
                 {
                     name: `description`,
@@ -51,10 +42,6 @@ export default function SEO({ data }) {
                     name: `twitter:card`,
                     content: ogDescription || pageDescription,
                 },
-                // {
-                //     name: `twitter:creator`,
-                //     content: site.siteMetadata.author,
-                // },
                 {
                     name: `twitter:title`,
                     content: pageTitle,
@@ -63,7 +50,27 @@ export default function SEO({ data }) {
                     name: `twitter:description`,
                     content: ogDescription || pageDescription,
                 },
-            ].concat()}
+            ]
+                .concat(
+                    ogImage
+                        ? [
+                              {
+                                  property: 'og:image',
+                                  content: imageSrcUrl,
+                              },
+                              {
+                                  name: 'twitter:card',
+                                  content: 'summary_large_image',
+                              },
+                          ]
+                        : [
+                              {
+                                  name: 'twitter:card',
+                                  content: 'summary',
+                              },
+                          ],
+                )
+                .concat()}
         />
     );
 }
