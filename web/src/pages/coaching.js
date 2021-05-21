@@ -125,7 +125,7 @@ export const query = graphql`
             }
         }
 
-        seo: sanityAboutPage {
+        seo: sanityCoachingPage {
             seo {
                 ogDescription
                 ogImage {
