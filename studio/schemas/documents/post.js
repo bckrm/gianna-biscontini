@@ -12,8 +12,7 @@ export default {
             name: 'slug',
             type: 'slug',
             title: 'Slug',
-            description:
-                'Some frontends will require a slug to be set to be able to show the post',
+            description: 'This will be the url path for this post',
             options: {
                 source: 'title',
                 maxLength: 96,
@@ -35,7 +34,11 @@ export default {
             type: 'text',
             title: 'Excerpt',
             description:
-                'This ends up on summary pages, on Google, when people share your post in social media.',
+                'This text will be used as the preview text when the post is featured on the writing page. It will also be used as the SEO description by Google. This text should not be longer than 165 characters',
+            validation: (Rule) =>
+                Rule.max(165).warning(
+                    'Should not be longer than 165 characters',
+                ),
         },
         {
             name: 'body',
