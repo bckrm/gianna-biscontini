@@ -10,7 +10,7 @@ export default () => {
         .title('Content')
         .items([
             S.listItem()
-                .title('Index')
+                .title('Home')
                 .icon(VscFile)
                 .child(
                     S.document()
@@ -58,7 +58,7 @@ export default () => {
                         .documentId('contactPage'),
                 ),
             S.listItem()
-                .title('Settings')
+                .title('Global')
                 .icon(VscFile)
                 .child(
                     S.document().schemaType('settings').documentId('settings'),
