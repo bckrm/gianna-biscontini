@@ -37,7 +37,7 @@ export default {
         },
         {
             name: 'introLink',
-            title: 'Intro Link (emily, will these be internal or external)',
+            title: 'Intro Link',
             type: 'internalLink',
         },
         {
