@@ -48,6 +48,7 @@ export default function Intro({ content, image }) {
     const {
         childImageSharp: { fluid: bgImageData },
     } = image;
+
     return (
         <Section>
             <StyledBgImage fluid={bgImageData}>
