@@ -8,6 +8,7 @@ import Intro from '../components/index/intro';
 import Testimonial from '../components/testimonial';
 import Media from '../components/index/media';
 import Blog from '../components/index/blog';
+import SchedulingModal from '../components/schedulingModal';
 import Seo from '../components/seo';
 
 export const query = graphql`
@@ -184,6 +185,15 @@ export const query = graphql`
             }
         }
 
+        modalBg: file(relativePath: { regex: "/modalBg/" }) {
+            id
+            childImageSharp {
+                fluid(maxWidth: 300) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+
         seo: sanityIndexPage {
             seo {
                 ogDescription
@@ -205,6 +215,7 @@ export default function IndexPage({ data }) {
         intro,
         media,
         mediaItems: { edges: mediaItems },
+        modalBg,
         rawPosts,
         seo,
         testimonial,
@@ -213,6 +224,7 @@ export default function IndexPage({ data }) {
     return (
         <Layout>
             <Seo data={seo} />
+            <SchedulingModal image={modalBg} />
             <Hero content={hero} />
             <Intro content={intro} image={crimsonBgImage} />
             <Testimonial data={testimonial} />
@@ -230,6 +242,7 @@ IndexPage.propTypes = {
         intro: PropTypes.object.isRequired,
         media: PropTypes.object.isRequired,
         mediaItems: PropTypes.object.isRequired,
+        modalBg: PropTypes.object.isRequired,
         rawPosts: PropTypes.array.isRequired,
         seo: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
