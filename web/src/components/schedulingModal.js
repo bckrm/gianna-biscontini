@@ -1,21 +1,50 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 import { openPopupWidget } from 'react-calendly';
 import Modal from 'react-modal';
 import Img from 'gatsby-image';
 import { VscChromeClose } from 'react-icons/vsc';
 
-export default function SchedulingModal({ image }) {
+export default function SchedulingModal() {
+    const data = useStaticQuery(graphql`
+        query {
+            sanityModal {
+                body
+                ctaText
+                heading
+                url
+                utmData {
+                    campaign
+                    content
+                    medium
+                    source
+                    term
+                }
+            }
+            modalBg: file(relativePath: { regex: "/modalBg/" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `);
+
     const {
-        childImageSharp: { fluid: imageData },
-    } = image;
+        modalBg: {
+            childImageSharp: { fluid: imageData },
+        },
+        sanityModal: { body, ctaText, heading, url, utm },
+    } = data;
     const [isModalOpen, setIsModalOpen] = useState(true);
+    const preFill = {};
+    const pageSettings = {};
 
     const closeModal = () => setIsModalOpen(false);
-
     const onClick = () => {
         closeModal();
-        openPopupWidget({ url: 'http://calendly.com/giannabiscontini' });
+        openPopupWidget({ url, preFill, pageSettings, utm });
     };
 
     const modalStyles = {
@@ -29,6 +58,7 @@ export default function SchedulingModal({ image }) {
             transform: 'translate(-50%, -50%)',
         },
     };
+
     return (
         <Modal
             isOpen={isModalOpen}
@@ -41,25 +71,20 @@ export default function SchedulingModal({ image }) {
             />
             <Img fluid={imageData} />
             <p className="absolute font-bold font-display py-8 px-12 text-center text-h3 text-white transform top-0 left-1/2 -translate-x-1/2 w-full">
-                30 minutes for $30
+                {heading}
             </p>
             <div className="p-12 pt-0 max-w-prose">
                 <p className="pb-10 leading-normal text-center text-xl">
-                    Interested in experiencing what its like to work with me?
-                    Schedule a mini-session for only $30
+                    {body}
                 </p>
                 <button
                     className="block m-[auto] link relative text-xl text-center uppercase w-[fit-content]"
                     onClick={onClick}
                     type="button"
                 >
-                    book now
+                    {ctaText}
                 </button>
             </div>
         </Modal>
     );
 }
-
-SchedulingModal.propTypes = {
-    image: PropTypes.object.isRequired,
-};

@@ -185,15 +185,6 @@ export const query = graphql`
             }
         }
 
-        modalBg: file(relativePath: { regex: "/modalBg/" }) {
-            id
-            childImageSharp {
-                fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-
         seo: sanityIndexPage {
             seo {
                 ogDescription
@@ -215,7 +206,6 @@ export default function IndexPage({ data }) {
         intro,
         media,
         mediaItems: { edges: mediaItems },
-        modalBg,
         rawPosts,
         seo,
         testimonial,
@@ -224,7 +214,7 @@ export default function IndexPage({ data }) {
     return (
         <Layout>
             <Seo data={seo} />
-            <SchedulingModal image={modalBg} />
+            <SchedulingModal />
             <Hero content={hero} />
             <Intro content={intro} image={crimsonBgImage} />
             <Testimonial data={testimonial} />
@@ -242,7 +232,6 @@ IndexPage.propTypes = {
         intro: PropTypes.object.isRequired,
         media: PropTypes.object.isRequired,
         mediaItems: PropTypes.object.isRequired,
-        modalBg: PropTypes.object.isRequired,
         rawPosts: PropTypes.array.isRequired,
         seo: PropTypes.object.isRequired,
         testimonial: PropTypes.object.isRequired,
