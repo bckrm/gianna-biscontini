@@ -58,6 +58,10 @@ export default () => {
                         .documentId('contactPage'),
                 ),
             S.listItem()
+                .title('Scheduling Modal')
+                .icon(VscFile)
+                .child(S.document().schemaType('modal').documentId('modal')),
+            S.listItem()
                 .title('Global')
                 .icon(VscFile)
                 .child(
@@ -70,6 +74,7 @@ export default () => {
                         'coachingPage',
                         'contactPage',
                         'indexPage',
+                        'modal',
                         'settings',
                         'speakingPage',
                         'writingPage',

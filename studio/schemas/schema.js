@@ -16,6 +16,7 @@ import indexPage from './documents/indexPage';
 import internalLink from './documents/internalLink';
 import mediaItem from './documents/mediaItem';
 import post from './documents/post';
+import schedulingModal from './documents/schedulingModal';
 import settings from './documents/settings';
 import socialAccount from './documents/socialAccount';
 import speakingPage from './documents/speakingPage';
@@ -29,6 +30,7 @@ import excerptPortableText from './objects/excerptPortableText';
 import mainImage from './objects/mainImage';
 import seo from './objects/seo';
 import seoImage from './objects/seoImage';
+import utmData from './objects/modalUtmData';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -48,6 +50,7 @@ export default createSchema({
         internalLink,
         mediaItem,
         post,
+        schedulingModal,
         settings,
         socialAccount,
         speakingPage,
@@ -61,5 +64,6 @@ export default createSchema({
         mainImage,
         seo,
         seoImage,
+        utmData,
     ]),
 });

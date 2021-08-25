@@ -8,6 +8,7 @@ import Intro from '../components/index/intro';
 import Testimonial from '../components/testimonial';
 import Media from '../components/index/media';
 import Blog from '../components/index/blog';
+import SchedulingModal from '../components/schedulingModal';
 import Seo from '../components/seo';
 
 export const query = graphql`
@@ -213,6 +214,7 @@ export default function IndexPage({ data }) {
     return (
         <Layout>
             <Seo data={seo} />
+            <SchedulingModal />
             <Hero content={hero} />
             <Intro content={intro} image={crimsonBgImage} />
             <Testimonial data={testimonial} />
