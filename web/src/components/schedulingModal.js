@@ -23,7 +23,7 @@ export default function SchedulingModal() {
             }
             modalBg: file(relativePath: { regex: "/modalBg/" }) {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 1000) {
                         ...GatsbyImageSharpFluid
                     }
                 }
