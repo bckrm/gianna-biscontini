@@ -70,7 +70,7 @@ export default function SchedulingModal() {
                 onClick={closeModal}
             />
             <Img fluid={imageData} />
-            <p className="absolute font-bold font-display py-8 px-12 text-center text-h3 text-white transform top-0 left-1/2 -translate-x-1/2 w-full">
+            <p className="absolute font-bold font-display py-4 md:py-8 px-12 text-center text-h5 md:text-h3 text-white transform top-0 left-1/2 -translate-x-1/2 w-full">
                 {heading}
             </p>
             <div className="p-12 pt-0 max-w-prose">
