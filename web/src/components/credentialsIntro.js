@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import SvgGroup6 from './svgs/group6';
 
 export default function Credentials({ data }) {
     const {
@@ -11,8 +12,8 @@ export default function Credentials({ data }) {
         introHeading,
     } = data;
     return (
-        <section className="container mt-40 mb-80">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-12">
+        <section className="container mt-40 mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-12 relative">
                 <div className="max-w-full">
                     <Img
                         className="max-w-full lg:max-w-[600px]"
@@ -33,6 +34,9 @@ export default function Credentials({ data }) {
                             </div>
                         );
                     })}
+                    <div className="hidden lg:block absolute top-12 right-0">
+                        <SvgGroup6 />
+                    </div>
                 </div>
             </div>
         </section>

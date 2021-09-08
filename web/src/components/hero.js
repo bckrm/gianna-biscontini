@@ -4,11 +4,8 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import ContactForm from './contactForm';
 import BlockText from './block-content/blockText';
-// import SvgGroup1 from './svgs/group1';
 import SvgGroup2 from './svgs/group2';
-// import SvgGroup3 from './svgs/group3';
-// import SvgGroup4 from './svgs/group4';
-// import SvgGroup5 from './svgs/group5';
+import SvgGroup6 from './svgs/group6';
 
 export default function Hero({ background, data, isContact }) {
     const {
@@ -24,22 +21,7 @@ export default function Hero({ background, data, isContact }) {
 
         className={`translate-y-[${transform}]`}
     */
-    // const transform = imageData ? 'translate-y-[50%]' : 'translate-y-[200%]';
-    const heroStyle = imageData ? 'mb-52 mt-8' : 'mb-28 mt-8';
-
-    // const { pathname } = location;
-
-    // remove all forward slashes from pathname
-    // gatsby prepends a / in local dev but appends in production
-    // const cleanPathname = pathname.replace(/\//g, '');
-
-    // const icon = {
-    //     about: <SvgGroup3 />,
-    //     coaching: <SvgGroup1 />,
-    //     contact: <SvgGroup4 />,
-    //     speaking: <SvgGroup2 />,
-    //     writing: <SvgGroup5 />,
-    // };
+    const heroStyle = imageData ? 'relative -translate-y-1/4' : 'mt-[-15rem]';
 
     return (
         <section className="relative">
@@ -52,7 +34,7 @@ export default function Hero({ background, data, isContact }) {
                         fluid={bgImageData}
                         loading="eager"
                     />
-                    <h1 className="absolute w-full top-1/2 left-1/2 md:left-[5%] text-h1 text-center md:text-left text-white transform -translate-y-3/4 -translate-x-1/2 md:-translate-x-0 relative">
+                    <h1 className="absolute w-full top-1/2 left-1/2 md:left-[5%] text-h1 text-center md:text-left text-white transform -translate-y-3/4 -translate-x-1/2 md:-translate-x-0">
                         {pageTitle}
                     </h1>
                 </div>
@@ -60,25 +42,29 @@ export default function Hero({ background, data, isContact }) {
             <SvgGroup2 />
 
             {isContact ? (
-                <div
-                    className={`container ${heroStyle} transform lg:mt-[-10rem]`}
-                >
+                <div className="container transform lg:mt-[-10rem]">
                     <p className="block font-display text-h4 text-brand-2 ml-auto mb-10 md:w-1/2">
                         {_rawHeading && <BlockText blocks={_rawHeading} />}
                     </p>
                     <ContactForm />
                 </div>
             ) : (
-                <div className={`container ${heroStyle}`}>
+                <div className={`container transform ${heroStyle}`}>
                     {imageData && (
                         <div className="ml-auto mb-8 px-16 lg:w-1/2">
                             <Img fluid={imageData} />
                         </div>
                     )}
+
                     {_rawHeading && (
-                        <p className="block text-xl lg:w-1/2 ml-auto lg:px-16 prose text-body">
+                        <p className="block lg:w-1/2 ml-auto lg:px-16 prose text-body">
                             {_rawHeading && <BlockText blocks={_rawHeading} />}
                         </p>
+                    )}
+                    {imageData && (
+                        <div className="absolute hidden lg:block left-0 transform w-[500px] -translate-y-full translate-x-1/2 top-full origin-center">
+                            <SvgGroup6 />
+                        </div>
                     )}
                 </div>
             )}
