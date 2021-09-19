@@ -21,7 +21,9 @@ export default function Hero({ background, data, isContact }) {
 
         className={`translate-y-[${transform}]`}
     */
-    const heroStyle = imageData ? 'relative -translate-y-1/4' : 'mt-[-15rem]';
+    const heroStyle = imageData
+        ? 'relative -translate-y-1/4'
+        : 'lg:mt-[-15rem]';
 
     return (
         <section className="relative">

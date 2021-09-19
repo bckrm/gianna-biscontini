@@ -8,7 +8,7 @@ export default function FeaturedBlogIntro({ data }) {
     const { featuredPost, _rawHeading } = data;
 
     return (
-        <section className="container pt-80 mb-28">
+        <section className="container pt-20 lg:pt-80 mb-28">
             <h2 className="font-body font-semibold mb-8 text-xl tracking-[.115rem] leading-none">
                 Featured Blog
             </h2>
