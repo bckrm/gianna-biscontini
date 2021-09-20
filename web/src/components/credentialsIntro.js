@@ -13,7 +13,7 @@ export default function Credentials({ data }) {
     } = data;
     return (
         <section className="container mt-40 mb-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-12 relative">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 relative">
                 <div className="max-w-full">
                     <Img
                         className="max-w-full lg:max-w-[600px]"

@@ -18,7 +18,7 @@ export default function Hero({ content }) {
                 <div>
                     <MustardSvg />
                 </div>
-                <h1 className="absolute max-w-[95%] md:max-w-[55rem] text-h3 md:text-h1 text-brand-1 leading-none transform left-[2.5%] md:left-[5%] top-0 translate-y-[25%] lg:translate-y-35%]">
+                <h1 className="absolute max-w-[95%] lg:max-w-[55rem] text-h3 md:text-h2 lg:text-h1 text-brand-1 leading-none transform left-[2.5%] md:left-[5%] top-0 translate-y-[25%] lg:translate-y-35%]">
                     {heroHeading}
                 </h1>
             </div>

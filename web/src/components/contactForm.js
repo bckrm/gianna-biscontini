@@ -45,12 +45,12 @@ export default function ContactForm() {
     return (
         <div>
             {isFormSubmitSuccessful ? (
-                <p className="block font-display text-h4 text-brand-2 ml-auto mb-10 md:w-1/2">
+                <p className="block font-display text-h4 text-brand-2 ml-auto mb-10 lg:w-1/2">
                     Thank you
                 </p>
             ) : (
                 <form
-                    className="md:mr-0 md:ml-auto md:w-1/2"
+                    className="md:mr-0 md:ml-auto lg:w-1/2"
                     method="post"
                     onSubmit={handleSubmit}
                     data-netlify="true"
@@ -61,7 +61,7 @@ export default function ContactForm() {
                     <input className="hidden" name="contact" value="contact" />
                     <div className="md:flex">
                         <label
-                            className={`md:w-1/2 ${labelStyles}`}
+                            className={`lg:w-1/2 ${labelStyles}`}
                             htmlFor="firstName"
                         >
                             First Name
@@ -74,7 +74,7 @@ export default function ContactForm() {
                             />
                         </label>
                         <label
-                            className={`md:w-1/2 ${labelStyles}`}
+                            className={`lg:w-1/2 ${labelStyles}`}
                             htmlFor="lastName"
                         >
                             Last Name
