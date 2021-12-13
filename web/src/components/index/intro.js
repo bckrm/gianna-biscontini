@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
+// import BlockText from './block-content/blockText';
+import BlockText from '../block-content/blockText';
 
 import InternalLink from '../internalLink';
 
@@ -24,7 +26,7 @@ const Grid = styled.div`
 `;
 
 const Body = styled.p`
-    ${tw`md:col-start-1 md:col-end-7 text-xl`}
+    ${tw`md:col-start-1 md:col-end-7 text-xl prose`}
 `;
 
 const StyledImg = styled(Img)`
@@ -37,7 +39,7 @@ const LinkContainer = styled.div`
 
 export default function Intro({ content, image }) {
     const {
-        introBody,
+        _rawIntroBody,
         introHeading,
         introImage: {
             asset: { fluid: imageData },
@@ -59,7 +61,9 @@ export default function Intro({ content, image }) {
                 </HeadingContainer>
             </StyledBgImage>
             <Grid>
-                <Body>{introBody}</Body>
+                <Body>
+                    <BlockText blocks={_rawIntroBody} />
+                </Body>
                 <StyledImg fluid={imageData} />
                 <LinkContainer>
                     <InternalLink data={introLink} />
@@ -71,7 +75,7 @@ export default function Intro({ content, image }) {
 
 Intro.propTypes = {
     content: PropTypes.shape({
-        introBody: PropTypes.string.isRequired,
+        _rawIntroBody: PropTypes.string.isRequired,
         introHeading: PropTypes.string.isRequired,
         introImage: PropTypes.object.isRequired,
         introLink: PropTypes.object.isRequired,

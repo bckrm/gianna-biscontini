@@ -70,7 +70,7 @@ export const query = graphql`
 
         intro: sanityIndexPage {
             introHeading
-            introBody
+            _rawIntroBody(resolveReferences: { maxDepth: 10 })
             introLink {
                 link {
                     ... on SanityAboutPage {
