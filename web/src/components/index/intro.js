@@ -22,12 +22,12 @@ const HeadingContainer = styled.div`
 
 export default function Intro({ content, image }) {
     const {
-        _rawIntroBody,
         introHeading,
         introImage: {
             asset: { fluid: imageData },
         },
         introLink,
+        _rawIntroBody,
     } = content;
 
     const {
@@ -64,6 +64,7 @@ Intro.propTypes = {
         introHeading: PropTypes.string.isRequired,
         introImage: PropTypes.object.isRequired,
         introLink: PropTypes.object.isRequired,
+        membershipCertifications: PropTypes.array.isRequired,
     }).isRequired,
     image: PropTypes.object.isRequired,
 };

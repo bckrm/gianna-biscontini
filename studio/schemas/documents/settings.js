@@ -20,6 +20,15 @@ export default {
             type: 'image',
         },
         {
+            name: 'membershipCertifications',
+            title: 'Memberships and Certifications',
+            type: 'array',
+            of: [
+                { type: 'reference', to: { type: 'membershipCertifications' } },
+            ],
+            validation: (Rule) => Rule.unique(),
+        },
+        {
             name: 'socialAccounts',
             title: 'Social Media Accounts',
             type: 'array',

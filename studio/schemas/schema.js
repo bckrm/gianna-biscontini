@@ -15,6 +15,7 @@ import event from './documents/events';
 import indexPage from './documents/indexPage';
 import internalLink from './documents/internalLink';
 import mediaItem from './documents/mediaItem';
+import membershipCertifications from './documents/membershipCertifications';
 import post from './documents/post';
 import schedulingModal from './documents/schedulingModal';
 import settings from './documents/settings';
@@ -49,6 +50,7 @@ export default createSchema({
         indexPage,
         internalLink,
         mediaItem,
+        membershipCertifications,
         post,
         schedulingModal,
         settings,
