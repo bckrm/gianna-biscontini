@@ -33,7 +33,7 @@ export default {
         {
             name: 'introBody',
             title: 'Intro Body',
-            type: 'text',
+            type: 'bodyPortableText',
         },
         {
             name: 'introLink',
