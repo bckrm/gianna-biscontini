@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
-// import BlockText from './block-content/blockText';
 import BlockText from '../block-content/blockText';
 
 import InternalLink from '../internalLink';
@@ -19,22 +18,6 @@ const StyledBgImage = styled(BackgroundImage)`
 
 const HeadingContainer = styled.div`
     ${tw`container`}
-`;
-
-const Grid = styled.div`
-    ${tw`container grid grid-cols-1 md:grid-cols-12 gap-x-5 gap-y-10`}
-`;
-
-const Body = styled.p`
-    ${tw`md:col-start-1 md:col-end-7 text-xl prose`}
-`;
-
-const StyledImg = styled(Img)`
-    ${tw`row-start-1 md:col-start-8 md:col-end-13 -mt-16 md:-mt-40`}
-`;
-
-const LinkContainer = styled.div`
-    ${tw`md:col-start-1 md:col-end-6 md:row-start-2`}
 `;
 
 export default function Intro({ content, image }) {
@@ -60,15 +43,17 @@ export default function Intro({ content, image }) {
                     </h2>
                 </HeadingContainer>
             </StyledBgImage>
-            <Grid>
-                <Body>
+            <div className="container grid grid-cols-1 md:grid-cols-12 gap-x-5 gap-y-10">
+                <div className="md:col-start-1 md:col-end-7 text-xl prose">
                     <BlockText blocks={_rawIntroBody} />
-                </Body>
-                <StyledImg fluid={imageData} />
-                <LinkContainer>
+                </div>
+                <div className="row-start-1 md:col-start-8 md:col-end-13 -mt-16 md:-mt-40">
+                    <Img fluid={imageData} />
+                </div>
+                <div className="md:col-start-1 md:col-end-6 md:row-start-2">
                     <InternalLink data={introLink} />
-                </LinkContainer>
-            </Grid>
+                </div>
+            </div>
         </Section>
     );
 }
