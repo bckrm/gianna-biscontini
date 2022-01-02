@@ -98,6 +98,15 @@ export const query = graphql`
                     }
                 }
             }
+            membershipCertifications {
+                image {
+                    asset {
+                        fluid(maxWidth: 500) {
+                            ...GatsbySanityImageFluid
+                        }
+                    }
+                }
+            }
         }
 
         testimonial: sanityIndexPage {
@@ -120,7 +129,7 @@ export const query = graphql`
             mediaSubHeading
             mediaImage {
                 asset {
-                    fluid(maxWidth: 400) {
+                    fluid(maxWidth: 250) {
                         ...GatsbySanityImageFluid
                     }
                 }

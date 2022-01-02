@@ -22,12 +22,13 @@ const HeadingContainer = styled.div`
 
 export default function Intro({ content, image }) {
     const {
-        _rawIntroBody,
         introHeading,
         introImage: {
             asset: { fluid: imageData },
         },
         introLink,
+        membershipCertifications,
+        _rawIntroBody,
     } = content;
 
     const {
@@ -50,7 +51,18 @@ export default function Intro({ content, image }) {
                 <div className="row-start-1 md:col-start-8 md:col-end-13 -mt-16 md:-mt-40">
                     <Img fluid={imageData} />
                 </div>
-                <div className="md:col-start-1 md:col-end-6 md:row-start-2">
+
+                <div className="md:col-start-1 md:col-end-3 md:row-start-2">
+                    <Img
+                        fluid={membershipCertifications[0].image.asset.fluid}
+                    />
+                </div>
+                <div className="md:row-start-2 md:col-start-3">
+                    <Img
+                        fluid={membershipCertifications[1].image.asset.fluid}
+                    />
+                </div>
+                <div className="md:col-start-1 md:col-end-6 md:row-start-3">
                     <InternalLink data={introLink} />
                 </div>
             </div>
@@ -64,6 +76,7 @@ Intro.propTypes = {
         introHeading: PropTypes.string.isRequired,
         introImage: PropTypes.object.isRequired,
         introLink: PropTypes.object.isRequired,
+        membershipCertifications: PropTypes.array.isRequired,
     }).isRequired,
     image: PropTypes.object.isRequired,
 };
