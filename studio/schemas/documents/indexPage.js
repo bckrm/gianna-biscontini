@@ -36,6 +36,15 @@ export default {
             type: 'bodyPortableText',
         },
         {
+            name: 'membershipCertifications',
+            title: 'Memberships and Certifications',
+            type: 'array',
+            of: [
+                { type: 'reference', to: { type: 'membershipCertifications' } },
+            ],
+            validation: (Rule) => Rule.unique(),
+        },
+        {
             name: 'introLink',
             title: 'Intro Link',
             type: 'internalLink',
